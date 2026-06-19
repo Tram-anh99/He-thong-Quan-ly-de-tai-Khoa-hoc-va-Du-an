@@ -1,0 +1,278 @@
+// ===================================================
+// Hệ thống Quản lý Đề tài Khoa học và Dự án
+// Prisma Schema — PostgreSQL
+// ===================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── ENUMS ─────────────────────────────────────────
+
+enum Role {
+  ADMIN
+  MANAGER
+  PI         // Principal Investigator / Chủ nhiệm
+  RESEARCHER // Nghiên cứu viên
+  ACCOUNTANT // Kế toán
+}
+
+enum ProjectStatus {
+  DRAFT      // Nháp
+  SUBMITTED  // Đã nộp
+  APPROVED   // Đã duyệt
+  ONGOING    // Đang thực hiện
+  COMPLETED  // Hoàn thành
+  SUSPENDED  // Tạm dừng
+  ARCHIVED   // Lưu trữ
+}
+
+enum ContractStatus {
+  DRAFT
+  PENDING_SIGNATURE
+  SIGNED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PARTIAL
+  COMPLETED
+}
+
+// ─── MODELS ────────────────────────────────────────
+
+model User {
+  id              String           @id @default(uuid())
+  email           String           @unique
+  password        String
+  fullName        String
+  phoneNumber     String?
+  position        String?          // Chức vụ
+  department      String?          // Bộ môn / Phòng ban
+  role            Role             @default(RESEARCHER)
+  isActive        Boolean          @default(true)
+
+  // Relations
+  ownedProjects   Project[]        @relation("OwnerProjects")
+  memberships     ProjectMember[]
+  contracts       Contract[]
+  budgetAssignments BudgetItem[]   @relation("AssignedBudgetItems")
+
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  @@index([email])
+  @@index([role])
+  @@map("users")
+}
+
+model Project {
+  id              String         @id @default(uuid())
+  code            String?        @unique   // Mã đề tài: "DT-2025-001"
+  title           String                     // Tên đề tài
+  summary         String?                    // Tóm tắt
+  fullText        String?        @db.Text   // Thuyết minh (HTML/Markdown)
+  ownerId         String                     // Chủ nhiệm FK
+  totalBudget     Decimal        @db.Decimal(20, 2) @default(0) // Tổng kinh phí (VND)
+  fundingSource   String?                    // Nguồn kinh phí: NS, viện phí, hợp đồng...
+  startDate       DateTime?                  // Ngày bắt đầu
+  endDate         DateTime?                  // Ngày kết thúc
+  year            Int                        // Năm thực hiện (để filter)
+  status          ProjectStatus  @default(DRAFT)
+
+  // Relations
+  owner           User           @relation("OwnerProjects", fields: [ownerId], references: [id], onDelete: Restrict)
+  documents       ProjectDocument[]
+  members         ProjectMember[]
+  budgetItems     BudgetItem[]
+  contracts       Contract[]
+  products        Product[]
+  paymentRecords  PaymentRecord[]
+
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@index([ownerId])
+  @@index([year])
+  @@index([status])
+  @@map("projects")
+}
+
+model ProjectDocument {
+  id          String   @id @default(uuid())
+  projectId   String
+  name        String                 // Tên tài liệu
+  description String?                // Mô tả
+  fileUrl     String                 // URL lưu trữ (S3 hoặc local path)
+  fileType    String                 // MIME type: application/pdf, application/msword...
+  category    String?                // Phân loại: thuyetminh, quyetdinh, dutoan, bieumau
+
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([projectId])
+  @@index([category])
+  @@map("project_documents")
+}
+
+model ProjectMember {
+  id              String    @id @default(uuid())
+  projectId       String
+  userId          String
+  roleInProject   String?               // "Chủ nhiệm", "Thành viên", "Cộng tác viên"
+  allocation      Decimal?  @db.Decimal(5, 2)  // Tỷ lệ tham gia (%)
+  startDate       DateTime?
+  endDate         DateTime?
+
+  project         Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt       DateTime  @default(now())
+
+  @@unique([projectId, userId])
+  @@index([projectId])
+  @@index([userId])
+  @@map("project_members")
+}
+
+model BudgetItem {
+  id              String        @id @default(uuid())
+  projectId       String
+  title           String                     // Tên công việc / hạng mục
+  description     String?                    // Mô tả chi tiết
+  amount          Decimal       @db.Decimal(20, 2) @default(0) // Kinh phí dự kiến (VND)
+  unit            String?                    // Đơn vị tính
+  quantity        Decimal?      @db.Decimal(10, 2) // Số lượng
+  unitPrice       Decimal?      @db.Decimal(20, 2) // Đơn giá
+  assignedToId    String?                    // Người thực hiện FK
+  status          String?       @default("planned") // planned, approved, in_progress, completed, paid
+  sortOrder       Int           @default(0)  // Thứ tự hiển thị
+
+  // Relations
+  project         Project       @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  assignedTo      User?         @relation("AssignedBudgetItems", fields: [assignedToId], references: [id], onDelete: SetNull)
+  paymentRecords  PaymentRecord[]
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([projectId])
+  @@index([assignedToId])
+  @@map("budget_items")
+}
+
+model Contract {
+  id              String         @id @default(uuid())
+  projectId       String
+  userId          String                     // Người ký hợp đồng
+  contractNo      String?        @unique     // Số hợp đồng: "HĐ-2025-001"
+  title           String                     // Tên hợp đồng
+  contractType    String?                    // Loại: khoan_chuyen_mon, thue_khoan, cung_cap
+  content         String?        @db.Text    // Nội dung (HTML)
+  amount          Decimal        @db.Decimal(20, 2) @default(0)
+  startDate       DateTime?
+  endDate         DateTime?
+  fileUrl         String?                    // File hợp đồng đã ký
+  status          ContractStatus @default(DRAFT)
+
+  // Relations
+  project         Project        @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  user            User           @relation(fields: [userId], references: [id], onDelete: Restrict)
+  paymentRecords  PaymentRecord[]
+
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@index([projectId])
+  @@index([userId])
+  @@index([contractNo])
+  @@map("contracts")
+}
+
+model Product {
+  id              String    @id @default(uuid())
+  projectId       String
+  title           String                      // Tên sản phẩm
+  description     String?                     // Mô tả
+  fileUrl         String?                     // URL file Word/PDF/Code
+  fileType        String?                     // word, pdf, code, dataset, other
+  deliveredBy     String?                     // Người giao nộp
+  deliverDate     DateTime?                   // Ngày giao nộp
+  version         String?                     // Phiên bản
+
+  project         Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([projectId])
+  @@map("products")
+}
+
+model PaymentRecord {
+  id              String        @id @default(uuid())
+  projectId       String
+  budgetItemId    String?
+  contractId      String?
+  amount          Decimal       @db.Decimal(20, 2)
+  paymentType     String?                    // tam_ung, thanh_toan, nghiem_thu, thanh_ly
+  description     String?
+  documentUrl     String?                    // Chứng từ đính kèm
+  paymentDate     DateTime?
+  status          PaymentStatus @default(PENDING)
+
+  project         Project       @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  budgetItem      BudgetItem?   @relation(fields: [budgetItemId], references: [id], onDelete: SetNull)
+  contract        Contract?     @relation(fields: [contractId], references: [id], onDelete: SetNull)
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([projectId])
+  @@index([budgetItemId])
+  @@index([contractId])
+  @@map("payment_records")
+}
+
+model DocumentTemplate {
+  id              String    @id @default(uuid())
+  name            String                      // Tên biểu mẫu
+  description     String?                     // Mô tả
+  category        String?                     // hop_dong, nghiem_thu, thanh_ly, de_nghi_tam_ung...
+  fileUrl         String                      // URL file .docx mẫu
+  placeholders    Json?                       // Danh sách placeholder ["{{Ten_Du_An}}", ...]
+  isActive        Boolean   @default(true)
+
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([category])
+  @@map("document_templates")
+}
+
+model AuditLog {
+  id          String   @id @default(uuid())
+  entity      String                          // Tên bảng: Project, Contract...
+  entityId    String                          // ID bản ghi
+  action      String                          // CREATE, UPDATE, DELETE, EXPORT
+  payload     Json?                            // Chi tiết thay đổi
+  userId      String?                         // Người thực hiện
+  ipAddress   String?
+
+  createdAt   DateTime @default(now())
+
+  @@index([entity, entityId])
+  @@index([userId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}

@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+      --primary: #1677ff;
+      --primary-dark: #0958d9;
+}
+
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #1f1f1f;
+}
+
+/* Override Ant Design for professional look */
+.ant-layout-header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+      background: #bfbfbf;
+      border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+      background: #f0f0f0;
+}
+
+/* Rich text editor styling */
+.rich-text-editor .ql-editor {
+      min-height: 300px;
+      font-size: 14px;
+      line-height: 1.8;
+}
+
+/* Table styling */
+.ant-table-thead>tr>th {
+      background: #fafafa !important;
+      font-weight: 600 !important;
+}
+
+/* Professional card */
+.project-card {
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+}
+
+/* Status badges */
+.status-draft {
+      color: #8c8c8c;
+}
+
+.status-submitted {
+      color: #1677ff;
+}
+
+.status-approved {
+      color: #52c41a;
+}
+
+.status-ongoing {
+      color: #faad14;
+}
+
+.status-completed {
+      color: #13c2c2;
+}
+
+.status-suspended {
+      color: #ff4d4f;
+}
+
+.status-archived {
+      color: #8c8c8c;
+}
