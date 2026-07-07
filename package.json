@@ -31,6 +31,7 @@
           "next-auth": "^4.24.0",
           "pdfmake": "^0.2.12",
           "pizzip": "^3.1.7",
+          "ponytail": "^1.0.57",
           "react": "^18.3.0",
           "react-dom": "^18.3.0",
           "react-quill": "^2.0.0"

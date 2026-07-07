@@ -6,6 +6,9 @@ import {
      errorResponse,
      paginatedResponse,
 } from "@/lib/api-helpers";
+import { compactProjectForAudit, createAuditLog } from "@/lib/audit";
+
+export const dynamic = "force-dynamic";
 
 // GET /api/projects - List all projects with filtering & pagination
 export async function GET(request: NextRequest) {
@@ -153,6 +156,17 @@ export async function POST(request: NextRequest) {
                     userId: user.id,
                     roleInProject: "Chủ nhiệm",
                     allocation: 100,
+               },
+          });
+
+          await createAuditLog({
+               request,
+               user,
+               entity: "Project",
+               entityId: project.id,
+               action: "CREATE",
+               payload: {
+                    after: compactProjectForAudit(project),
                },
           });
 

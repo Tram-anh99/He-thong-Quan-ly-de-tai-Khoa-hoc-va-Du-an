@@ -17,6 +17,7 @@ import {
      FileTextOutlined,
      TeamOutlined,
      DollarOutlined,
+     HistoryOutlined,
      LogoutOutlined,
      UserOutlined,
      SettingOutlined,
@@ -95,6 +96,15 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                icon: <DollarOutlined />,
                label: "Báo cáo",
           },
+          ...(user?.role === "ADMIN"
+               ? [
+                      {
+                           key: "/audit-logs",
+                           icon: <HistoryOutlined />,
+                           label: "Lịch sử",
+                      },
+                 ]
+               : []),
           {
                key: "/settings",
                icon: <SettingOutlined />,

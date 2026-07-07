@@ -1,8 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AppLayout from "@/components/AppLayout";
-import { Row, Col, Card, Statistic, Typography, Table, Tag, Space } from "antd";
+import {
+     Row,
+     Col,
+     Card,
+     Statistic,
+     Typography,
+     Table,
+     Tag,
+     Space,
+     Spin,
+     message,
+     Modal,
+} from "antd";
 import {
      ProjectOutlined,
      DollarOutlined,
@@ -12,6 +24,7 @@ import {
 } from "@ant-design/icons";
 import { formatVND } from "@/lib/number-utils";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const { Title, Text } = Typography;
 
@@ -35,73 +48,76 @@ const STATUS_LABELS: Record<string, string> = {
      ARCHIVED: "Lưu trữ",
 };
 
+interface DashboardData {
+     stats: {
+          totalProjects: number;
+          ongoingProjects: number;
+          completedProjects: number;
+          totalBudget: string;
+          totalMembers: number;
+     };
+     recentProjects: any[];
+     lists: {
+          allProjects: any[];
+          ongoingProjects: any[];
+          completedProjects: any[];
+          users: any[];
+     };
+}
+
+type ListKey = keyof DashboardData["lists"];
+
 export default function DashboardPage() {
      const router = useRouter();
+     const [loading, setLoading] = useState(true);
+     const [data, setData] = useState<DashboardData | null>(null);
+     const [openList, setOpenList] = useState<ListKey | null>(null);
 
-     // Mock stats — will be replaced with API calls
-     const stats = {
-          totalProjects: 12,
-          ongoingProjects: 5,
-          completedProjects: 4,
-          totalBudget: 3500000000,
-          totalMembers: 28,
-     };
+     useEffect(() => {
+          const fetchDashboard = async () => {
+               try {
+                    const res = await axios.get("/api/dashboard");
+                    if (res.data.success) setData(res.data.data);
+               } catch {
+                    message.error("Không thể tải dữ liệu tổng quan");
+               } finally {
+                    setLoading(false);
+               }
+          };
+          fetchDashboard();
+     }, []);
 
-     const recentProjects = [
-          {
-               id: "1",
-               code: "DT-2025-001",
-               title: "Nghiên cứu ứng dụng Trí tuệ nhân tạo trong quản lý tài liệu khoa học",
-               ownerName: "Nguyễn Văn A",
-               status: "ONGOING",
-               year: 2025,
-               totalBudget: 500000000,
-          },
-          {
-               id: "2",
-               code: "DT-2025-002",
-               title: "Xây dựng hệ thống IoT giám sát môi trường thông minh",
-               ownerName: "Trần Thị B",
-               status: "APPROVED",
-               year: 2025,
-               totalBudget: 800000000,
-          },
-          {
-               id: "3",
-               code: "DA-2024-005",
-               title: "Dự án chuyển đổi số cho thư viện đại học",
-               ownerName: "Lê Văn C",
-               status: "COMPLETED",
-               year: 2024,
-               totalBudget: 1200000000,
-          },
-     ];
-
-     const columns = [
+     const projectColumns = [
           {
                title: "Mã",
                dataIndex: "code",
                key: "code",
                width: 130,
-               render: (code: string) => <Text strong>{code}</Text>,
+               render: (code: string | null) =>
+                    code ? <Text strong>{code}</Text> : <Text type="secondary">-</Text>,
           },
           {
                title: "Tên đề tài / dự án",
                dataIndex: "title",
                key: "title",
                ellipsis: true,
+               render: (title: string, record: any) => (
+                    <a onClick={() => router.push(`/projects/${record.id}`)}>
+                         {title}
+                    </a>
+               ),
           },
           {
                title: "Chủ nhiệm",
-               dataIndex: "ownerName",
-               key: "ownerName",
-               width: 150,
+               dataIndex: ["owner", "fullName"],
+               key: "owner",
+               width: 160,
           },
           {
                title: "Năm",
                dataIndex: "year",
                key: "year",
-               width: 70,
+               width: 80,
                align: "center" as const,
           },
           {
@@ -110,7 +126,7 @@ export default function DashboardPage() {
                key: "totalBudget",
                width: 160,
                align: "right" as const,
-               render: (val: number) => formatVND(val) + " VNĐ",
+               render: (val: string) => formatVND(val) + " VNĐ",
           },
           {
                title: "Trạng thái",
@@ -125,90 +141,137 @@ export default function DashboardPage() {
           },
      ];
 
+     const userColumns = [
+          {
+               title: "Họ tên",
+               dataIndex: "fullName",
+               key: "fullName",
+          },
+          {
+               title: "Email",
+               dataIndex: "email",
+               key: "email",
+          },
+          {
+               title: "Vai trò",
+               dataIndex: "role",
+               key: "role",
+               width: 130,
+               render: (role: string) => <Tag color="blue">{role}</Tag>,
+          },
+          {
+               title: "Chức vụ",
+               dataIndex: "position",
+               key: "position",
+          },
+          {
+               title: "Phòng ban",
+               dataIndex: "department",
+               key: "department",
+          },
+     ];
+
+     if (loading) {
+          return (
+               <AppLayout>
+                    <div style={{ textAlign: "center", padding: 100 }}>
+                         <Spin size="large" />
+                    </div>
+               </AppLayout>
+          );
+     }
+
+     if (!data) return null;
+
+     const listTitles: Record<ListKey, string> = {
+          allProjects: "Tất cả đề tài / dự án",
+          ongoingProjects: "Đề tài / dự án đang thực hiện",
+          completedProjects: "Đề tài / dự án đã hoàn thành",
+          users: "Danh sách nhân sự / tài khoản",
+     };
+
      return (
           <AppLayout>
                <div style={{ marginBottom: 24 }}>
                     <Title level={4} style={{ marginBottom: 4 }}>
-                         📊 Tổng quan hệ thống
+                         Tổng quan hệ thống
                     </Title>
                     <Text type="secondary">
-                         Thống kê tình hình đề tài và dự án
+                         Thống kê tình hình đề tài, dự án và nhân sự
                     </Text>
                </div>
 
-               {/* Stats Cards */}
                <Row gutter={[16, 16]} style={{ marginBottom: 24 }}>
                     <Col xs={24} sm={12} lg={6}>
                          <Card
                               hoverable
+                              onClick={() => setOpenList("allProjects")}
                               style={{ borderTop: "3px solid #1677ff" }}
                          >
                               <Statistic
                                    title="Tổng số đề tài / dự án"
-                                   value={stats.totalProjects}
-                                   prefix={
-                                        <ProjectOutlined
-                                             style={{ color: "#1677ff" }}
-                                        />
-                                   }
+                                   value={data.stats.totalProjects}
+                                   prefix={<ProjectOutlined style={{ color: "#1677ff" }} />}
                               />
                          </Card>
                     </Col>
                     <Col xs={24} sm={12} lg={6}>
                          <Card
                               hoverable
+                              onClick={() => setOpenList("ongoingProjects")}
                               style={{ borderTop: "3px solid #faad14" }}
                          >
                               <Statistic
                                    title="Đang thực hiện"
-                                   value={stats.ongoingProjects}
-                                   prefix={
-                                        <ClockCircleOutlined
-                                             style={{ color: "#faad14" }}
-                                        />
-                                   }
+                                   value={data.stats.ongoingProjects}
+                                   prefix={<ClockCircleOutlined style={{ color: "#faad14" }} />}
                               />
                          </Card>
                     </Col>
                     <Col xs={24} sm={12} lg={6}>
                          <Card
                               hoverable
+                              onClick={() => setOpenList("completedProjects")}
                               style={{ borderTop: "3px solid #52c41a" }}
                          >
                               <Statistic
                                    title="Hoàn thành"
-                                   value={stats.completedProjects}
-                                   prefix={
-                                        <CheckCircleOutlined
-                                             style={{ color: "#52c41a" }}
-                                        />
-                                   }
+                                   value={data.stats.completedProjects}
+                                   prefix={<CheckCircleOutlined style={{ color: "#52c41a" }} />}
                               />
                          </Card>
                     </Col>
                     <Col xs={24} sm={12} lg={6}>
                          <Card
                               hoverable
+                              onClick={() => setOpenList("users")}
                               style={{ borderTop: "3px solid #722ed1" }}
                          >
                               <Statistic
-                                   title="Tổng kinh phí"
-                                   value={stats.totalBudget}
-                                   prefix={
-                                        <DollarOutlined
-                                             style={{ color: "#722ed1" }}
-                                        />
-                                   }
-                                   formatter={(value) =>
-                                        formatVND(value as number)
-                                   }
-                                   suffix="VNĐ"
+                                   title="Nhân sự / tài khoản"
+                                   value={data.stats.totalMembers}
+                                   prefix={<TeamOutlined style={{ color: "#722ed1" }} />}
                               />
                          </Card>
                     </Col>
                </Row>
 
-               {/* Recent Projects Table */}
+               <Card
+                    title={
+                         <Space>
+                              <DollarOutlined />
+                              <span>Tổng kinh phí toàn hệ thống</span>
+                         </Space>
+                    }
+                    style={{ marginBottom: 24 }}
+               >
+                    <Statistic
+                         value={data.stats.totalBudget}
+                         formatter={(value) => formatVND(value as string)}
+                         suffix="VNĐ"
+                    />
+               </Card>
+
                <Card
                     title={
                          <Space>
@@ -217,24 +280,48 @@ export default function DashboardPage() {
                          </Space>
                     }
                     extra={
-                         <a onClick={() => router.push("/projects")}>
-                              Xem tất cả →
+                         <a onClick={() => setOpenList("allProjects")}>
+                              Xem tất cả
                          </a>
                     }
                >
                     <Table
-                         dataSource={recentProjects}
-                         columns={columns}
+                         dataSource={data.recentProjects}
+                         columns={projectColumns}
                          rowKey="id"
                          pagination={false}
                          size="middle"
-                         onRow={(record) => ({
-                              onClick: () =>
-                                   router.push(`/projects/${record.id}`),
-                              style: { cursor: "pointer" },
-                         })}
                     />
                </Card>
+
+               <Modal
+                    title={openList ? listTitles[openList] : ""}
+                    open={Boolean(openList)}
+                    onCancel={() => setOpenList(null)}
+                    footer={null}
+                    width={1100}
+                    destroyOnClose
+               >
+                    {openList === "users" ? (
+                         <Table
+                              dataSource={data.lists.users}
+                              columns={userColumns}
+                              rowKey="id"
+                              size="middle"
+                              pagination={{ pageSize: 10 }}
+                         />
+                    ) : (
+                         <Table
+                              dataSource={
+                                   openList ? data.lists[openList] : []
+                              }
+                              columns={projectColumns}
+                              rowKey="id"
+                              size="middle"
+                              pagination={{ pageSize: 10 }}
+                         />
+                    )}
+               </Modal>
           </AppLayout>
      );
 }

@@ -2,6 +2,9 @@ import { NextRequest } from "next/server";
 import prisma from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth";
 import { successResponse, errorResponse } from "@/lib/api-helpers";
+import { compactProjectForAudit, createAuditLog } from "@/lib/audit";
+
+export const dynamic = "force-dynamic";
 
 type Params = { params: { id: string } };
 
@@ -148,6 +151,18 @@ export async function PUT(request: NextRequest, { params }: Params) {
                },
           });
 
+          await createAuditLog({
+               request,
+               user,
+               entity: "Project",
+               entityId: project.id,
+               action: "UPDATE",
+               payload: {
+                    before: compactProjectForAudit(existing),
+                    after: compactProjectForAudit(project),
+               },
+          });
+
           return successResponse(project);
      } catch (error) {
           console.error("PUT /api/projects/[id] error:", error);
@@ -171,6 +186,17 @@ export async function DELETE(request: NextRequest, { params }: Params) {
           if (!existing) return errorResponse("Không tìm thấy dự án", 404);
 
           await prisma.project.delete({ where: { id: params.id } });
+
+          await createAuditLog({
+               request,
+               user,
+               entity: "Project",
+               entityId: params.id,
+               action: "DELETE",
+               payload: {
+                    before: compactProjectForAudit(existing),
+               },
+          });
 
           return successResponse({ message: "Đã xóa dự án thành công" });
      } catch (error) {
