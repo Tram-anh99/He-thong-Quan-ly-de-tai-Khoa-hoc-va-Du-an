@@ -9,11 +9,16 @@ export async function POST(request: NextRequest) {
           const { email, password } = body;
 
           if (!email || !password) {
-               return errorResponse("Email và mật khẩu là bắt buộc");
+               return errorResponse("Tài khoản và mật khẩu là bắt buộc");
           }
 
+          const loginId = String(email).trim().toLowerCase();
+          const normalizedEmail = loginId.includes("@")
+               ? loginId
+               : `${loginId}@khoahoc.vn`;
+
           const user = await prisma.user.findUnique({
-               where: { email },
+               where: { email: normalizedEmail },
           });
 
           if (!user || !user.isActive) {

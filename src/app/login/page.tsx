@@ -82,18 +82,15 @@ export default function LoginPage() {
                                    rules={[
                                         {
                                              required: true,
-                                             message: "Vui lòng nhập email",
-                                        },
-                                        {
-                                             type: "email",
-                                             message: "Email không hợp lệ",
+                                             message:
+                                                  "Vui lòng nhập tài khoản",
                                         },
                                    ]}
                               >
                                    <Input
                                         prefix={<UserOutlined />}
-                                        placeholder="Email"
-                                        autoComplete="email"
+                                        placeholder="Tài khoản hoặc email"
+                                        autoComplete="username"
                                    />
                               </Form.Item>
 
@@ -126,7 +123,7 @@ export default function LoginPage() {
                          </Form>
 
                          <Text type="secondary" style={{ fontSize: 12 }}>
-                              Demo: admin@khoahoc.vn / admin123
+                              Demo: 1 / 1 hoặc admin@khoahoc.vn / admin123
                          </Text>
                     </Space>
                </Card>
