@@ -89,8 +89,16 @@ def main():
 
     for item in selected:
         ensure_label(item["priority"])
-        body = f"Mã công việc: **{item['id']}**\n\nModule: {item['primaryModuleId']} · Cycle: {item['cycleId']} · Ưu tiên: {item['priority']}\n\n### Mục tiêu và tiêu chí nghiệm thu\n\n" + "\n".join(f"- {criterion}" for criterion in item["acceptanceCriteria"])
-        body += "\n\n### Nội dung thực hiện và bằng chứng\n\n" + "\n".join(f"- {note}" for note in item.get("progressNotes", []))
+        body = (
+            f"Mã công việc: **{item['id']}** · Mã thực hiện: **{item['executionCode']}** "
+            f"(thứ tự {item['executionOrder']}/51)\n\n"
+            f"Module: {item['primaryModuleId']} · Cycle: {item['cycleId']} · Ưu tiên: {item['priority']}"
+        )
+        body += "\n\n### Đầu vào\n\n" + "\n".join(f"- {value}" for value in item["executionInputs"])
+        body += "\n\n### Đầu ra và tiêu chí nghiệm thu\n\n" + "\n".join(f"- {value}" for value in item["executionOutputs"])
+        body += "\n\n### Các bước thực hiện\n\n" + "\n".join(f"{index}. {step}" for index, step in enumerate(item["executionSteps"], 1))
+        notes = item.get("progressNotes", [])
+        body += "\n\n### Thay đổi, lỗi và cách xử lý\n\n" + ("\n".join(f"- {note}" for note in notes) if notes else "- Chưa bắt đầu; chưa có thay đổi hoặc lỗi để ghi nhận.")
         mapping = upsert(item["id"], item["title"], body, {"labels": [item["primaryModuleId"], item["priority"]],
                          "milestone": state["cycles"][item["cycleId"]]["github"]["number"]})
         state["workItems"].setdefault(item["id"], {}).setdefault("externalMappings", {})["github"] = mapping

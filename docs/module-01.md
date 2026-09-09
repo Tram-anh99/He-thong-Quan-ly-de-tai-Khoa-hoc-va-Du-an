@@ -35,6 +35,15 @@ Kiểm thử tích hợp yêu cầu `TEST_DATABASE_URL` trỏ database tên bắ
 
 `scripts/verify_restore.py` chỉ làm việc với container riêng `research-m01-db`, user `research_test` và database fixture `research_m01_test`. Script tạo database khôi phục mới, không reset/xóa DB nguồn; giữ DB khôi phục để xem lại. Báo cáo tại [module-01-restore-evidence.json](module-01-restore-evidence.json). Đây là dữ liệu giả, không phải đối soát dữ liệu thật của tổ chức.
 
+## Nhật ký thực hiện, thay đổi và xử lý lỗi
+
+| Work Idea | Đầu vào | Thay đổi / các bước đã chạy | Đầu ra | Lỗi và cách xử lý |
+| --- | --- | --- | --- | --- |
+| CORE-001 (`WI-004`) | PostgreSQL thử nghiệm `research_m01_test`, migration và fixture tổng hợp | Kiểm tra container riêng; chạy `prisma migrate deploy`; chạy `scripts/verify_restore.py` | 10 bảng được backup/restore, khớp nội dung, ID, số lượng và Decimal; bằng chứng `module-01-restore-evidence.json` | Ban đầu không có `TEST_DATABASE_URL` và không dùng `.env` vì nó trỏ DB khác. Phát hiện container test ở cổng 55439, xác minh đúng DB/user rồi chỉ truyền URL test tạm thời cho lệnh kiểm tra. |
+| QA-001 (`WI-008`) | Mã nguồn, Prisma Client và database thử nghiệm | Chạy generate, typecheck, lint, unit test, kiểm tra backlog, build và `test:integration` | Typecheck/lint/build đạt; 7/7 integration tests đạt | Lệnh đọc danh sách GitHub dùng biểu thức định dạng sai. Chạy lại bằng JSON thô để xác minh, không thay đổi issue hoặc trạng thái từ lỗi đó. |
+| LINK-002 (`WI-040`) | `backlog.json`, `backlog-state.json`, mapping Module/Cycle/Work Idea | Đồng bộ các issue M01 với mã thực hiện, Module, Cycle, phụ thuộc và liên kết Plane | Issue GitHub chứa cấu trúc đầu vào/đầu ra/bước thực hiện; mapping cục bộ giữ nguyên | Tích hợp Plane tự động chưa nghiệm thu; chỉ cập nhật Plane sau khi đọc xác nhận trong phiên đã đăng nhập. |
+| OPS-001 (`WI-051`) | MVP đã nghiệm thu, bản sao staging và kế hoạch phục hồi | Chưa thực hiện vì điều kiện MVP chưa đạt | Chưa có đầu ra staging | Không chạy migration vào `DATABASE_URL` trong `.env`, vì nó không phải database thử nghiệm đã xác minh. |
+
 ## Quy trình baseline cơ sở dữ liệu hiện có
 
 1. Sao lưu bằng pg_dump và khôi phục vào DB staging riêng. Đối soát dữ liệu với nguồn trước khi chuyển đổi.

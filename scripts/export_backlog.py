@@ -127,6 +127,26 @@ def export():
             assert parent not in ancestors, f"Parent cycle at {parent}"
             ancestors.add(parent)
             parent = by_id[parent]["parentId"]
+
+    # Keep the business identifier (for example CORE-001) separate from the
+    # deterministic execution number.  The latter gives people and external
+    # trackers one unambiguous order without changing dependencies.
+    for sequence, item_id in enumerate(order, 1):
+        item = by_id[item_id]
+        dependencies = item["dependsOnIds"]
+        item["executionOrder"] = sequence
+        item["executionCode"] = f"WI-{sequence:03d}"
+        item["executionInputs"] = [
+            item["description"],
+            *( [f"Hoàn tất và xác nhận: {', '.join(dependencies)}"] if dependencies else [] ),
+        ]
+        item["executionOutputs"] = item["acceptanceCriteria"]
+        item["executionSteps"] = [
+            "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+            f"Thực hiện thay đổi cho: {item['title']}.",
+            "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+            "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane.",
+        ]
     data = {
         "schemaVersion": 1, "format": "internal-backlog-not-native-import",
         "source": str(source.relative_to(ROOT)), "syncStatus": state.get("syncStatus", "not_synced"),

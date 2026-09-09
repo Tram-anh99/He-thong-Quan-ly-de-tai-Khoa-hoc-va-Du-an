@@ -303,6 +303,20 @@
       "progressNotes": [
         "JWT fail closed, HS256, payload/expiry và tài khoản hoạt động; kiểm thử đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 1,
+      "executionCode": "WI-001",
+      "executionInputs": [
+        "Bỏ secret mặc định, validate token, từ chối user đã khóa; token sai/hết hạn nhận 401"
+      ],
+      "executionOutputs": [
+        "Bỏ secret mặc định, validate token, từ chối user đã khóa; token sai/hết hạn nhận 401"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Bảo vệ phiên đăng nhập và từ chối tài khoản đã khóa.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -335,6 +349,21 @@
       "progressNotes": [
         "Giới hạn dữ liệu theo vai trò và người dùng; kiểm thử truy cập chéo đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 2,
+      "executionCode": "WI-002",
+      "executionInputs": [
+        "Lọc project/list/detail/dashboard theo vai trò; test truy cập chéo và trường riêng tư",
+        "Hoàn tất và xác nhận: SEC-001"
+      ],
+      "executionOutputs": [
+        "Lọc project/list/detail/dashboard theo vai trò; test truy cập chéo và trường riêng tư"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Giới hạn dữ liệu dự án và dashboard theo quyền người dùng.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -365,6 +394,20 @@
       "progressNotes": [
         "Làm sạch HTML ở đọc/ghi; kiểm thử XSS đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 3,
+      "executionCode": "WI-003",
+      "executionInputs": [
+        "Làm sạch fullText; script và event handler không thực thi"
+      ],
+      "executionOutputs": [
+        "Làm sạch fullText; script và event handler không thực thi"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Làm sạch nội dung HTML thuyết minh đề tài.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -395,6 +438,20 @@
       "progressNotes": [
         "Baseline migration đạt; restore fixture đối soát 10 bảng. Chưa đối soát bản sao dữ liệu production.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 4,
+      "executionCode": "WI-004",
+      "executionInputs": [
+        "Baseline migration, backup/restore thử trên bản sao; giữ số bản ghi và tổng tiền"
+      ],
+      "executionOutputs": [
+        "Baseline migration, backup/restore thử trên bản sao; giữ số bản ghi và tổng tiền"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Thiết lập migration và kiểm tra phục hồi dữ liệu hiện có.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -427,6 +484,21 @@
       "progressNotes": [
         "Transaction audit cho create/update/archive; thử lỗi audit rollback đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 5,
+      "executionCode": "WI-005",
+      "executionInputs": [
+        "Mutation và audit cùng transaction; lỗi audit rollback mutation",
+        "Hoàn tất và xác nhận: CORE-001"
+      ],
+      "executionOutputs": [
+        "Mutation và audit cùng transaction; lỗi audit rollback mutation"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Ghi nhật ký cùng giao dịch thay đổi dữ liệu.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -459,6 +531,21 @@
       "progressNotes": [
         "Đã thay xóa bằng lưu trữ; kiểm thử bảo toàn hợp đồng/thanh toán và rollback đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 6,
+      "executionCode": "WI-006",
+      "executionInputs": [
+        "Lưu trữ đề tài có phát sinh thay xóa cascade; chứng từ vẫn truy vấn được",
+        "Hoàn tất và xác nhận: AUD-001"
+      ],
+      "executionOutputs": [
+        "Lưu trữ đề tài có phát sinh thay xóa cascade; chứng từ vẫn truy vấn được"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Lưu trữ đề tài có phát sinh tài chính.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -489,6 +576,20 @@
       "progressNotes": [
         "Validation tiền Decimal/ngày/JSON/phân trang; kiểm thử biên và API đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 7,
+      "executionCode": "WI-007",
+      "executionInputs": [
+        "Validate payload/filter/pagination, tiền Decimal; dữ liệu sai trả 4xx"
+      ],
+      "executionOutputs": [
+        "Validate payload/filter/pagination, tiền Decimal; dữ liệu sai trả 4xx"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Kiểm tra dữ liệu đầu vào và chuẩn hóa số tiền.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -521,6 +622,21 @@
       "progressNotes": [
         "Typecheck, lint, build, 5 unit, 7 integration và 5 backlog test local đạt; GitHub Actions verify đạt trên PR #15.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 8,
+      "executionCode": "WI-008",
+      "executionInputs": [
+        "Lệnh test/typecheck/lint không tương tác và CI; có test phân quyền thất bại",
+        "Hoàn tất và xác nhận: SEC-002"
+      ],
+      "executionOutputs": [
+        "Lệnh test/typecheck/lint không tương tác và CI; có test phân quyền thất bại"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Thiết lập kiểm thử tự động và kiểm tra phân quyền.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -545,7 +661,22 @@
           "id": "QUNLDN-10",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-10/"
         }
-      }
+      },
+      "executionOrder": 9,
+      "executionCode": "WI-009",
+      "executionInputs": [
+        "Person tách User, CRUD và link account; cộng tác viên không cần login",
+        "Hoàn tất và xác nhận: CORE-001, SEC-002"
+      ],
+      "executionOutputs": [
+        "Person tách User, CRUD và link account; cộng tác viên không cần login"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Quản lý hồ sơ nhân sự độc lập tài khoản đăng nhập.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "PEOPLE-002",
@@ -568,7 +699,22 @@
           "id": "QUNLDN-11",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-11/"
         }
-      }
+      },
+      "executionOrder": 10,
+      "executionCode": "WI-010",
+      "executionInputs": [
+        "SalaryHistory/DependentHistory có hiệu lực; chặn chồng lấn và đọc trái quyền",
+        "Hoàn tất và xác nhận: PEOPLE-001"
+      ],
+      "executionOutputs": [
+        "SalaryHistory/DependentHistory có hiệu lực; chặn chồng lấn và đọc trái quyền"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Quản lý lịch sử lương và người phụ thuộc.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "PEOPLE-003",
@@ -592,7 +738,22 @@
           "id": "QUNLDN-12",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-12/"
         }
-      }
+      },
+      "executionOrder": 11,
+      "executionCode": "WI-011",
+      "executionInputs": [
+        "Competency và kinh nghiệm theo thời điểm; sửa hồ sơ có audit",
+        "Hoàn tất và xác nhận: PEOPLE-001, AUD-001"
+      ],
+      "executionOutputs": [
+        "Competency và kinh nghiệm theo thời điểm; sửa hồ sơ có audit"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Quản lý kỹ năng và kinh nghiệm nhân sự.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "PEOPLE-004",
@@ -615,7 +776,22 @@
           "id": "QUNLDN-13",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-13/"
         }
-      }
+      },
+      "executionOrder": 12,
+      "executionCode": "WI-012",
+      "executionInputs": [
+        "Capacity theo người/tháng; tháng thiếu capacity báo chưa cấu hình",
+        "Hoàn tất và xác nhận: PEOPLE-001"
+      ],
+      "executionOutputs": [
+        "Capacity theo người/tháng; tháng thiếu capacity báo chưa cấu hình"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Cấu hình sức chứa ngày công theo người và tháng.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "WORK-001",
@@ -639,7 +815,22 @@
           "id": "QUNLDN-14",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-14/"
         }
-      }
+      },
+      "executionOrder": 13,
+      "executionCode": "WI-013",
+      "executionInputs": [
+        "Content/WorkItem CRUD; chặn liên kết chéo dự án và ngày ngoài khoảng cho phép",
+        "Hoàn tất và xác nhận: CORE-003, SEC-002"
+      ],
+      "executionOutputs": [
+        "Content/WorkItem CRUD; chặn liên kết chéo dự án và ngày ngoài khoảng cho phép"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Quản lý nội dung và công việc của đề tài.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "WORK-002",
@@ -663,7 +854,22 @@
           "id": "QUNLDN-15",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-15/"
         }
-      }
+      },
+      "executionOrder": 14,
+      "executionCode": "WI-014",
+      "executionInputs": [
+        "API thành viên, nối nút UI; chủ nhiệm chỉ phân công trong dự án của mình",
+        "Hoàn tất và xác nhận: PEOPLE-001, WORK-001"
+      ],
+      "executionOutputs": [
+        "API thành viên, nối nút UI; chủ nhiệm chỉ phân công trong dự án của mình"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Phân công thành viên thực hiện công việc.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "WORK-003",
@@ -686,7 +892,22 @@
           "id": "QUNLDN-16",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-16/"
         }
-      }
+      },
+      "executionOrder": 15,
+      "executionCode": "WI-015",
+      "executionInputs": [
+        "Mapping BudgetItem cũ; khoản chưa đủ thông tin xuất danh sách đối soát",
+        "Hoàn tất và xác nhận: WORK-001"
+      ],
+      "executionOutputs": [
+        "Mapping BudgetItem cũ; khoản chưa đủ thông tin xuất danh sách đối soát"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Chuyển đổi và đối soát hạng mục ngân sách cũ.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "RULE-001",
@@ -709,7 +930,22 @@
           "id": "QUNLDN-17",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-17/"
         }
-      }
+      },
+      "executionOrder": 16,
+      "executionCode": "WI-016",
+      "executionInputs": [
+        "RuleSet/version và nguồn văn bản; draft chưa được áp dụng chính thức",
+        "Hoàn tất và xác nhận: CORE-001"
+      ],
+      "executionOutputs": [
+        "RuleSet/version và nguồn văn bản; draft chưa được áp dụng chính thức"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Quản lý bộ định mức và phiên bản văn bản áp dụng.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "RULE-002",
@@ -733,7 +969,22 @@
           "id": "QUNLDN-18",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-18/"
         }
-      }
+      },
+      "executionOrder": 17,
+      "executionCode": "WI-017",
+      "executionInputs": [
+        "Đơn giá/đơn vị, điều kiện vai trò/kỹ năng/kinh nghiệm; kiểm tra tại ngày thực hiện",
+        "Hoàn tất và xác nhận: RULE-001, PEOPLE-003"
+      ],
+      "executionOutputs": [
+        "Đơn giá/đơn vị, điều kiện vai trò/kỹ năng/kinh nghiệm; kiểm tra tại ngày thực hiện"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Cấu hình đơn giá và điều kiện áp dụng định mức.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "RULE-003",
@@ -756,7 +1007,22 @@
           "id": "QUNLDN-19",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-19/"
         }
-      }
+      },
+      "executionOrder": 18,
+      "executionCode": "WI-018",
+      "executionInputs": [
+        "Công thức có whitelist, không eval; lưu giải thích, kiểm thử ngưỡng và hiệu lực",
+        "Hoàn tất và xác nhận: RULE-002"
+      ],
+      "executionOutputs": [
+        "Công thức có whitelist, không eval; lưu giải thích, kiểm thử ngưỡng và hiệu lực"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Tính và giải thích kết quả định mức.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "RULE-004",
@@ -780,7 +1046,22 @@
           "id": "QUNLDN-20",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-20/"
         }
-      }
+      },
+      "executionOrder": 19,
+      "executionCode": "WI-019",
+      "executionInputs": [
+        "Trần công/tiền/công việc/nội dung; phiên bản đã dùng bất biến",
+        "Hoàn tất và xác nhận: RULE-003, WORK-001"
+      ],
+      "executionOutputs": [
+        "Trần công/tiền/công việc/nội dung; phiên bản đã dùng bất biến"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Kiểm soát trần ngày công và kinh phí theo định mức.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "ALLOC-001",
@@ -805,7 +1086,22 @@
           "id": "QUNLDN-21",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-21/"
         }
-      }
+      },
+      "executionOrder": 20,
+      "executionCode": "WI-020",
+      "executionInputs": [
+        "Allocation người × công việc × tháng; tách allowed/allocated, CRUD có lý do",
+        "Hoàn tất và xác nhận: RULE-004, WORK-002, AUD-001"
+      ],
+      "executionOutputs": [
+        "Allocation người × công việc × tháng; tách allowed/allocated, CRUD có lý do"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Phân bổ ngày công và kinh phí theo người, công việc và tháng.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "ALLOC-002",
@@ -828,7 +1124,22 @@
           "id": "QUNLDN-22",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-22/"
         }
-      }
+      },
+      "executionOrder": 21,
+      "executionCode": "WI-021",
+      "executionInputs": [
+        "Kiểm tra trần trong transaction; test hai request cạnh tranh chỉ một được vượt đến giới hạn",
+        "Hoàn tất và xác nhận: ALLOC-001"
+      ],
+      "executionOutputs": [
+        "Kiểm tra trần trong transaction; test hai request cạnh tranh chỉ một được vượt đến giới hạn"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Ngăn vượt ngân sách khi nhiều người phân bổ đồng thời.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "ALLOC-003",
@@ -852,7 +1163,22 @@
           "id": "QUNLDN-23",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-23/"
         }
-      }
+      },
+      "executionOrder": 22,
+      "executionCode": "WI-022",
+      "executionInputs": [
+        "Cộng workload nhiều dự án, planned/actual riêng; cảnh báo đúng ngưỡng capacity",
+        "Hoàn tất và xác nhận: ALLOC-001, PEOPLE-004"
+      ],
+      "executionOutputs": [
+        "Cộng workload nhiều dự án, planned/actual riêng; cảnh báo đúng ngưỡng capacity"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Theo dõi tổng ngày công qua nhiều đề tài.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "PAY-001",
@@ -875,7 +1201,22 @@
           "id": "QUNLDN-24",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-24/"
         }
-      }
+      },
+      "executionOrder": 23,
+      "executionCode": "WI-023",
+      "executionInputs": [
+        "Giao dịch thanh toán từng đợt, người nhận, chứng từ; pending không cộng paid",
+        "Hoàn tất và xác nhận: ALLOC-002"
+      ],
+      "executionOutputs": [
+        "Giao dịch thanh toán từng đợt, người nhận, chứng từ; pending không cộng paid"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Ghi nhận thanh toán nhiều đợt theo người nhận.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "PAY-002",
@@ -899,7 +1240,22 @@
           "id": "QUNLDN-25",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-25/"
         }
-      }
+      },
+      "executionOrder": 24,
+      "executionCode": "WI-024",
+      "executionInputs": [
+        "Idempotency, điều chỉnh có liên kết, khóa kỳ; gửi lại không ghi trùng",
+        "Hoàn tất và xác nhận: PAY-001, AUD-001"
+      ],
+      "executionOutputs": [
+        "Idempotency, điều chỉnh có liên kết, khóa kỳ; gửi lại không ghi trùng"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Ngăn ghi trùng thanh toán và kiểm soát điều chỉnh kỳ đã khóa.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "VIEW-001",
@@ -922,7 +1278,22 @@
           "id": "QUNLDN-26",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-26/"
         }
-      }
+      },
+      "executionOrder": 25,
+      "executionCode": "WI-025",
+      "executionInputs": [
+        "Matrix tiền/ngày, tổng quý/năm và drawer; tổng ô khớp chi tiết",
+        "Hoàn tất và xác nhận: ALLOC-003"
+      ],
+      "executionOutputs": [
+        "Matrix tiền/ngày, tổng quý/năm và drawer; tổng ô khớp chi tiết"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Hiển thị ma trận phân bổ theo tháng và chi tiết công việc.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "VIEW-002",
@@ -946,7 +1317,22 @@
           "id": "QUNLDN-27",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-27/"
         }
-      }
+      },
+      "executionOrder": 26,
+      "executionCode": "WI-026",
+      "executionInputs": [
+        "Dashboard/heatmap workload và budget; số tổng đúng quyền và hai loại remaining",
+        "Hoàn tất và xác nhận: VIEW-001, PAY-002"
+      ],
+      "executionOutputs": [
+        "Dashboard/heatmap workload và budget; số tổng đúng quyền và hai loại remaining"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Hiển thị tổng ngân sách và heatmap ngày công.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "MVP-001",
@@ -975,7 +1361,22 @@
           "id": "QUNLDN-28",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-28/"
         }
-      }
+      },
+      "executionOrder": 40,
+      "executionCode": "WI-040",
+      "executionInputs": [
+        "UAT với quản lý/kế toán/PI/member, migration diễn tập và đối soát tiền; không còn lỗi P0, quan hệ backlog và nhắc hạn/hồ sơ đạt nghiệm thu",
+        "Hoàn tất và xác nhận: QA-001, WORK-003, VIEW-002, LINK-002, DOC-003, NOTICE-003, PAY-004"
+      ],
+      "executionOutputs": [
+        "UAT với quản lý/kế toán/PI/member, migration diễn tập và đối soát tiền; không còn lỗi P0, quan hệ backlog và nhắc hạn/hồ sơ đạt nghiệm thu"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Nghiệm thu MVP và đối soát dữ liệu chuyển đổi.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "TAX-001",
@@ -998,7 +1399,22 @@
           "id": "QUNLDN-29",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-29/"
         }
-      }
+      },
+      "executionOrder": 41,
+      "executionCode": "WI-041",
+      "executionInputs": [
+        "Xác minh văn bản chính thức, TaxPolicy version và duyệt cấu hình; thiếu policy không tính",
+        "Hoàn tất và xác nhận: PEOPLE-002"
+      ],
+      "executionOutputs": [
+        "Xác minh văn bản chính thức, TaxPolicy version và duyệt cấu hình; thiếu policy không tính"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Xác minh và quản lý phiên bản chính sách thuế.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "TAX-002",
@@ -1022,7 +1438,22 @@
           "id": "QUNLDN-30",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-30/"
         }
-      }
+      },
+      "executionOrder": 42,
+      "executionCode": "WI-042",
+      "executionInputs": [
+        "Sổ thu nhập lương/nguồn khác, phân loại khoản chi; không đếm trùng Payment",
+        "Hoàn tất và xác nhận: TAX-001, PAY-002"
+      ],
+      "executionOutputs": [
+        "Sổ thu nhập lương/nguồn khác, phân loại khoản chi; không đếm trùng Payment"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Tổng hợp thu nhập từ lương và các nguồn khác.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "TAX-003",
@@ -1045,7 +1476,22 @@
           "id": "QUNLDN-31",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-31/"
         }
-      }
+      },
+      "executionOrder": 43,
+      "executionCode": "WI-043",
+      "executionInputs": [
+        "Engine giảm trừ/biểu thuế/khấu trừ/làm tròn; test sát mọi ngưỡng, đổi năm và hiệu lực",
+        "Hoàn tất và xác nhận: TAX-002"
+      ],
+      "executionOutputs": [
+        "Engine giảm trừ/biểu thuế/khấu trừ/làm tròn; test sát mọi ngưỡng, đổi năm và hiệu lực"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Tính thuế theo chính sách và kiểm thử các ngưỡng.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "TAX-004",
@@ -1068,7 +1514,22 @@
           "id": "QUNLDN-32",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-32/"
         }
-      }
+      },
+      "executionOrder": 44,
+      "executionCode": "WI-044",
+      "executionInputs": [
+        "Ledger tháng và ước tính quyết toán năm; tách dự kiến/khấu trừ thật và đánh dấu thiếu dữ liệu",
+        "Hoàn tất và xác nhận: TAX-003"
+      ],
+      "executionOutputs": [
+        "Ledger tháng và ước tính quyết toán năm; tách dự kiến/khấu trừ thật và đánh dấu thiếu dữ liệu"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Theo dõi sổ thuế tháng và ước tính quyết toán năm.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "SCEN-001",
@@ -1091,7 +1552,22 @@
           "id": "QUNLDN-33",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-33/"
         }
-      }
+      },
+      "executionOrder": 45,
+      "executionCode": "WI-045",
+      "executionInputs": [
+        "Snapshot baseline và sửa allocation kịch bản; không ghi Payment/ledger thật",
+        "Hoàn tất và xác nhận: ALLOC-002"
+      ],
+      "executionOutputs": [
+        "Snapshot baseline và sửa allocation kịch bản; không ghi Payment/ledger thật"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Tạo và chỉnh sửa kịch bản phân bổ độc lập.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "SCEN-002",
@@ -1115,7 +1591,22 @@
           "id": "QUNLDN-34",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-34/"
         }
-      }
+      },
+      "executionOrder": 46,
+      "executionCode": "WI-046",
+      "executionInputs": [
+        "So sánh ngân sách/công/thuế; duyệt áp dụng chặn baseline cũ và chạy lại validator",
+        "Hoàn tất và xác nhận: SCEN-001, TAX-004"
+      ],
+      "executionOutputs": [
+        "So sánh ngân sách/công/thuế; duyệt áp dụng chặn baseline cũ và chạy lại validator"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: So sánh và phê duyệt áp dụng kịch bản phân bổ.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "VIEW-003",
@@ -1139,7 +1630,22 @@
           "id": "QUNLDN-35",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-35/"
         }
-      }
+      },
+      "executionOrder": 47,
+      "executionCode": "WI-047",
+      "executionInputs": [
+        "Heatmap income, mode tax/net, dashboard vai trò; drilldown đúng tổng và quyền",
+        "Hoàn tất và xác nhận: TAX-004, VIEW-002"
+      ],
+      "executionOutputs": [
+        "Heatmap income, mode tax/net, dashboard vai trò; drilldown đúng tổng và quyền"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Hiển thị heatmap thu nhập và dashboard theo vai trò.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "SEC-004",
@@ -1163,7 +1669,22 @@
           "id": "QUNLDN-36",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-36/"
         }
-      }
+      },
+      "executionOrder": 48,
+      "executionCode": "WI-048",
+      "executionInputs": [
+        "AUDITOR phạm vi được cấp, RLS nếu áp dụng; test connection pool không rò identity",
+        "Hoàn tất và xác nhận: SEC-002, TAX-004"
+      ],
+      "executionOutputs": [
+        "AUDITOR phạm vi được cấp, RLS nếu áp dụng; test connection pool không rò identity"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Cấp quyền kiểm toán và kiểm tra bảo vệ dữ liệu tại cơ sở dữ liệu.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "REPORT-001",
@@ -1186,7 +1707,22 @@
           "id": "QUNLDN-37",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-37/"
         }
-      }
+      },
+      "executionOrder": 49,
+      "executionCode": "WI-049",
+      "executionInputs": [
+        "Excel thu nhập/ngân sách, bộ lọc và tổng đối soát; chống formula injection và lọc quyền",
+        "Hoàn tất và xác nhận: VIEW-003"
+      ],
+      "executionOutputs": [
+        "Excel thu nhập/ngân sách, bộ lọc và tổng đối soát; chống formula injection và lọc quyền"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Xuất Excel thu nhập và ngân sách theo quyền truy cập.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "REPORT-002",
@@ -1210,7 +1746,22 @@
           "id": "QUNLDN-38",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-38/"
         }
-      }
+      },
+      "executionOrder": 50,
+      "executionCode": "WI-050",
+      "executionInputs": [
+        "Xuất gói hồ sơ chứng từ và mục lục phiên bản; gói xuất chỉ chứa tài liệu được phép đọc, truy vết được người xuất",
+        "Hoàn tất và xác nhận: DOC-003, SEC-002"
+      ],
+      "executionOutputs": [
+        "Xuất gói hồ sơ chứng từ và mục lục phiên bản; gói xuất chỉ chứa tài liệu được phép đọc, truy vết được người xuất"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Xuất gói hồ sơ chứng từ và mục lục phiên bản.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "OPS-001",
@@ -1243,6 +1794,21 @@
       "progressNotes": [
         "Giữ C10: chờ MVP-001 và REPORT-001; chưa triển khai production.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 51,
+      "executionCode": "WI-051",
+      "executionInputs": [
+        "Docker/deploy, healthcheck, restore và giám sát; kiểm thử phục hồi dữ liệu trên staging",
+        "Hoàn tất và xác nhận: MVP-001, REPORT-001"
+      ],
+      "executionOutputs": [
+        "Docker/deploy, healthcheck, restore và giám sát; kiểm thử phục hồi dữ liệu trên staging"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Triển khai hệ thống và kiểm tra phục hồi trên staging.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -1273,6 +1839,20 @@
       "progressNotes": [
         "Kiểm tra 51 item/11 module/10 cycle/80 dependency; mapping tái xuất được bảo toàn.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 27,
+      "executionCode": "WI-027",
+      "executionInputs": [
+        "Mỗi item có module chính và cycle dự kiến; mọi ID tham chiếu tồn tại, dependency không tạo vòng"
+      ],
+      "executionOutputs": [
+        "Mỗi item có module chính và cycle dự kiến; mọi ID tham chiếu tồn tại, dependency không tạo vòng"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Liên kết Work Item với Module và Cycle.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -1305,6 +1885,21 @@
       "progressNotes": [
         "Mapping và đồng bộ GitHub đang triển khai; Plane chưa tự động hóa.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "executionOrder": 28,
+      "executionCode": "WI-028",
+      "executionInputs": [
+        "Lưu ID từ xa riêng theo hệ thống; chạy lại không nhân đôi; tạo item trước rồi gắn quan hệ; báo rõ quan hệ chưa đồng bộ",
+        "Hoàn tất và xác nhận: LINK-001"
+      ],
+      "executionOutputs": [
+        "Lưu ID từ xa riêng theo hệ thống; chạy lại không nhân đôi; tạo item trước rồi gắn quan hệ; báo rõ quan hệ chưa đồng bộ"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Lưu ánh xạ và quan hệ backlog khi đồng bộ Plane và GitHub.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
       ]
     },
     {
@@ -1329,7 +1924,22 @@
           "id": "QUNLDN-41",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-41/"
         }
-      }
+      },
+      "executionOrder": 29,
+      "executionCode": "WI-029",
+      "executionInputs": [
+        "Kiểm tra vai trò, phạm vi dự án, người nhận và trạng thái; test API/file/mail không lộ dữ liệu chéo, người lập không tự duyệt",
+        "Hoàn tất và xác nhận: SEC-002, AUD-001"
+      ],
+      "executionOutputs": [
+        "Kiểm tra vai trò, phạm vi dự án, người nhận và trạng thái; test API/file/mail không lộ dữ liệu chéo, người lập không tự duyệt"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Phân quyền xử lý hợp đồng và hồ sơ thanh toán.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "CONTRACT-001",
@@ -1353,7 +1963,22 @@
           "id": "QUNLDN-42",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-42/"
         }
-      }
+      },
+      "executionOrder": 30,
+      "executionCode": "WI-030",
+      "executionInputs": [
+        "Một hợp đồng có nhiều dòng công việc; dòng tham chiếu đúng người/phân bổ/dự án, tổng không vượt giá trị hợp đồng",
+        "Hoàn tất và xác nhận: WORK-002, SEC-005"
+      ],
+      "executionOutputs": [
+        "Một hợp đồng có nhiều dòng công việc; dòng tham chiếu đúng người/phân bổ/dự án, tổng không vượt giá trị hợp đồng"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Liên kết hợp đồng với công việc và người thực hiện.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "WORK-004",
@@ -1377,7 +2002,22 @@
           "id": "QUNLDN-43",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-43/"
         }
-      }
+      },
+      "executionOrder": 35,
+      "executionCode": "WI-035",
+      "executionInputs": [
+        "Lưu ngày bắt đầu, kết thúc, bàn giao, người phụ trách; đổi hạn có lý do và revision, hoàn thành có thời điểm thực tế",
+        "Hoàn tất và xác nhận: WORK-002, AUD-001"
+      ],
+      "executionOutputs": [
+        "Lưu ngày bắt đầu, kết thúc, bàn giao, người phụ trách; đổi hạn có lý do và revision, hoàn thành có thời điểm thực tế"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Theo dõi thời gian thực hiện và hạn bàn giao công việc.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "PAY-003",
@@ -1401,7 +2041,22 @@
           "id": "QUNLDN-44",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-44/"
         }
-      }
+      },
+      "executionOrder": 33,
+      "executionCode": "WI-033",
+      "executionInputs": [
+        "Mỗi đợt có hạn, loại, số tiền, người nhận và điều kiện; tách lịch dự kiến với giao dịch thực trả",
+        "Hoàn tất và xác nhận: CONTRACT-001, PAY-001"
+      ],
+      "executionOutputs": [
+        "Mỗi đợt có hạn, loại, số tiền, người nhận và điều kiện; tách lịch dự kiến với giao dịch thực trả"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Lập lịch tạm ứng và thanh toán hợp đồng theo đợt.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "PAY-004",
@@ -1425,7 +2080,22 @@
           "id": "QUNLDN-45",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-45/"
         }
-      }
+      },
+      "executionOrder": 38,
+      "executionCode": "WI-038",
+      "executionInputs": [
+        "Liên kết cấn trừ/hoàn ứng; chặn cấn trừ trùng/vượt số dư; thu hồi tạm ứng không tạo lần chi mới",
+        "Hoàn tất và xác nhận: PAY-003, PAY-002"
+      ],
+      "executionOutputs": [
+        "Liên kết cấn trừ/hoàn ứng; chặn cấn trừ trùng/vượt số dư; thu hồi tạm ứng không tạo lần chi mới"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Đối soát tạm ứng và số tiền còn phải thanh toán.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "DOC-001",
@@ -1448,7 +2118,22 @@
           "id": "QUNLDN-46",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-46/"
         }
-      }
+      },
+      "executionOrder": 31,
+      "executionCode": "WI-031",
+      "executionInputs": [
+        "Template có phiên bản, điều kiện bắt buộc, yêu cầu bản mềm/bản ký, người nộp/kiểm tra; snapshot theo đợt",
+        "Hoàn tất và xác nhận: CONTRACT-001"
+      ],
+      "executionOutputs": [
+        "Template có phiên bản, điều kiện bắt buộc, yêu cầu bản mềm/bản ký, người nộp/kiểm tra; snapshot theo đợt"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Cấu hình checklist hồ sơ theo loại đợt thanh toán.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "DOC-002",
@@ -1472,7 +2157,22 @@
           "id": "QUNLDN-47",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-47/"
         }
-      }
+      },
+      "executionOrder": 32,
+      "executionCode": "WI-032",
+      "executionInputs": [
+        "Lưu hai loại file riêng, phiên bản/hash/người tải lên; kiểm soát download, loại/kích thước file; không ghi đè bản đã duyệt",
+        "Hoàn tất và xác nhận: DOC-001, SEC-005"
+      ],
+      "executionOutputs": [
+        "Lưu hai loại file riêng, phiên bản/hash/người tải lên; kiểm soát download, loại/kích thước file; không ghi đè bản đã duyệt"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Quản lý bản mềm và bản ký hoàn chỉnh của hồ sơ.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "DOC-003",
@@ -1496,7 +2196,22 @@
           "id": "QUNLDN-48",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-48/"
         }
-      }
+      },
+      "executionOrder": 34,
+      "executionCode": "WI-034",
+      "executionInputs": [
+        "Chỉ rõ thiếu bản nào và người xử lý; chặn duyệt khi hồ sơ bắt buộc chưa hợp lệ; trả bổ sung có lý do và audit",
+        "Hoàn tất và xác nhận: DOC-002, PAY-003"
+      ],
+      "executionOutputs": [
+        "Chỉ rõ thiếu bản nào và người xử lý; chặn duyệt khi hồ sơ bắt buộc chưa hợp lệ; trả bổ sung có lý do và audit"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Kiểm tra bộ hồ sơ trước khi duyệt thanh toán.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "NOTICE-001",
@@ -1520,7 +2235,22 @@
           "id": "QUNLDN-49",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-49/"
         }
-      }
+      },
+      "executionOrder": 36,
+      "executionCode": "WI-036",
+      "executionInputs": [
+        "Chọn người theo vai trò và dự án, mốc trước/đúng/sau hạn, kênh app/email, giờ gửi và múi giờ; xem trước người nhận",
+        "Hoàn tất và xác nhận: WORK-004, SEC-005"
+      ],
+      "executionOutputs": [
+        "Chọn người theo vai trò và dự án, mốc trước/đúng/sau hạn, kênh app/email, giờ gửi và múi giờ; xem trước người nhận"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Cấu hình người nhận và lịch nhắc công việc, tạm ứng, thanh toán.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "NOTICE-002",
@@ -1545,7 +2275,22 @@
           "id": "QUNLDN-50",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-50/"
         }
-      }
+      },
+      "executionOrder": 37,
+      "executionCode": "WI-037",
+      "executionInputs": [
+        "Outbox lưu bền vững, worker retry, khóa chống trùng; kiểm tra quyền lúc gửi, ghi trạng thái gửi/lỗi; test với hộp thư thử",
+        "Hoàn tất và xác nhận: NOTICE-001, PAY-003, DOC-003"
+      ],
+      "executionOutputs": [
+        "Outbox lưu bền vững, worker retry, khóa chống trùng; kiểm tra quyền lúc gửi, ghi trạng thái gửi/lỗi; test với hộp thư thử"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Gửi thông báo trong ứng dụng và email nhắc hạn.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     },
     {
       "id": "NOTICE-003",
@@ -1569,7 +2314,22 @@
           "id": "QUNLDN-51",
           "url": "https://work.opengis.vn/stac/browse/QUNLDN-51/"
         }
-      }
+      },
+      "executionOrder": 39,
+      "executionCode": "WI-039",
+      "executionInputs": [
+        "Đổi hạn hủy job cũ; khoản trả một phần vẫn nhắc phần còn lại; dừng khi hoàn tất/hủy; người bị thu quyền không nhận thư đang chờ",
+        "Hoàn tất và xác nhận: NOTICE-002, PAY-004"
+      ],
+      "executionOutputs": [
+        "Đổi hạn hủy job cũ; khoản trả một phần vẫn nhắc phần còn lại; dừng khi hoàn tất/hủy; người bị thu quyền không nhận thư đang chờ"
+      ],
+      "executionSteps": [
+        "Xác nhận đầu vào và các quan hệ phụ thuộc.",
+        "Thực hiện thay đổi cho: Theo dõi quá hạn và dừng nhắc khi công việc đã hoàn tất.",
+        "Chạy kiểm tra nghiệm thu và ghi bằng chứng.",
+        "Cập nhật thay đổi, lỗi và cách xử lý trên Work Idea, GitHub và Plane."
+      ]
     }
   ],
   "relations": [
