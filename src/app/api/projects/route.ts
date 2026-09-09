@@ -1,178 +1,54 @@
 import { NextRequest } from "next/server";
+import { Prisma } from "@prisma/client";
 import prisma from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth";
-import {
-     successResponse,
-     errorResponse,
-     paginatedResponse,
-} from "@/lib/api-helpers";
+import { failureResponse, errorResponse, paginatedResponse, successResponse } from "@/lib/api-helpers";
+import { canCreateProject, projectScope, projectListView } from "@/lib/access";
+import { integer, jsonObject, pagination, projectInput, projectStatus } from "@/lib/validation";
 import { compactProjectForAudit, createAuditLog } from "@/lib/audit";
+import { cleanHtml } from "@/lib/html";
 
 export const dynamic = "force-dynamic";
 
-// GET /api/projects - List all projects with filtering & pagination
 export async function GET(request: NextRequest) {
      try {
           const user = await getCurrentUser(request);
-          if (!user) {
-               return errorResponse("Unauthorized", 401);
-          }
-
-          const { searchParams } = new URL(request.url);
-          const page = parseInt(searchParams.get("page") || "1");
-          const pageSize = parseInt(searchParams.get("pageSize") || "10");
-          const year = searchParams.get("year");
-          const status = searchParams.get("status");
-          const search = searchParams.get("search");
-
-          // Build where clause
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const where: any = {};
-
-          if (year) {
-               where.year = parseInt(year);
-          }
-          if (status) {
-               where.status = status;
-          }
-          if (search) {
-               where.OR = [
-                    { title: { contains: search, mode: "insensitive" } },
-                    { code: { contains: search, mode: "insensitive" } },
-                    { summary: { contains: search, mode: "insensitive" } },
-               ];
-          }
-
-          const [projects, total] = await Promise.all([
+          if (!user) return errorResponse("Unauthorized", 401);
+          const params = request.nextUrl.searchParams;
+          const { page, pageSize } = pagination(params);
+          const filters: Prisma.ProjectWhereInput = {};
+          if (params.has("year")) filters.year = integer(params.get("year"), "Năm", 1900, 2200);
+          if (params.has("status")) filters.status = projectStatus(params.get("status"));
+          const search = params.get("search")?.trim();
+          if (search) filters.OR = ["title", "code", "summary"].map(key => ({ [key]: { contains: search.slice(0, 500), mode: "insensitive" } }));
+          const where: Prisma.ProjectWhereInput = { AND: [projectScope(user), filters] };
+          const [projects, total] = await prisma.$transaction([
                prisma.project.findMany({
-                    where,
-                    include: {
-                         owner: {
-                              select: {
-                                   id: true,
-                                   fullName: true,
-                                   position: true,
-                                   department: true,
-                              },
-                         },
-                         _count: {
-                              select: {
-                                   members: true,
-                                   budgetItems: true,
-                                   contracts: true,
-                                   products: true,
-                              },
-                         },
-                    },
-                    orderBy: { createdAt: "desc" },
-                    skip: (page - 1) * pageSize,
-                    take: pageSize,
+                    where, include: { owner: { select: { id: true, fullName: true, position: true, department: true } },
+                         _count: { select: { members: true, budgetItems: true, contracts: true, products: true } } },
+                    orderBy: [{ createdAt: "desc" }, { id: "asc" }], skip: (page - 1) * pageSize, take: pageSize,
                }),
                prisma.project.count({ where }),
-          ]);
-
-          return paginatedResponse(projects, total, page, pageSize);
-     } catch (error) {
-          console.error("GET /api/projects error:", error);
-          return errorResponse("Không thể tải danh sách dự án", 500);
-     }
+          ], { isolationLevel: Prisma.TransactionIsolationLevel.RepeatableRead });
+          return paginatedResponse(projects.map(p => projectListView({ ...p, fullText: cleanHtml(p.fullText) }, user)), total, page, pageSize);
+     } catch (error) { return failureResponse(error, "Không thể tải danh sách dự án"); }
 }
 
-// POST /api/projects - Create a new project
 export async function POST(request: NextRequest) {
      try {
           const user = await getCurrentUser(request);
-          if (!user) {
-               return errorResponse("Unauthorized", 401);
-          }
-
-          // Only ADMIN, MANAGER, PI can create projects
-          if (!["ADMIN", "MANAGER", "PI"].includes(user.role)) {
-               return errorResponse("Bạn không có quyền tạo dự án", 403);
-          }
-
-          const body = await request.json();
-          const {
-               code,
-               title,
-               summary,
-               fullText,
-               totalBudget,
-               fundingSource,
-               startDate,
-               endDate,
-               year,
-               status,
-          } = body;
-
-          // Validation
-          if (!title || title.trim().length === 0) {
-               return errorResponse("Tên đề tài là bắt buộc");
-          }
-          if (!year) {
-               return errorResponse("Năm thực hiện là bắt buộc");
-          }
-
-          // Check code uniqueness if provided
-          if (code) {
-               const existing = await prisma.project.findUnique({
-                    where: { code },
-               });
-               if (existing) {
-                    return errorResponse(`Mã đề tài "${code}" đã tồn tại`);
-               }
-          }
-
-          const project = await prisma.project.create({
-               data: {
-                    code: code || null,
-                    title: title.trim(),
-                    summary: summary || null,
-                    fullText: fullText || null,
-                    ownerId: user.id,
-                    totalBudget: totalBudget || 0,
-                    fundingSource: fundingSource || null,
-                    startDate: startDate ? new Date(startDate) : null,
-                    endDate: endDate ? new Date(endDate) : null,
-                    year: parseInt(year),
-                    status: status || "DRAFT",
-               },
-               include: {
-                    owner: {
-                         select: {
-                              id: true,
-                              fullName: true,
-                              position: true,
-                              department: true,
-                         },
-                    },
-               },
+          if (!user) return errorResponse("Unauthorized", 401);
+          if (!canCreateProject(user)) return errorResponse("Bạn không có quyền tạo dự án", 403);
+          const input = projectInput(await jsonObject(request));
+          const project = await prisma.$transaction(async tx => {
+               const created = await tx.project.create({ data: {
+                    ...input, fullText: cleanHtml(input.fullText), title: input.title!, year: input.year!, ownerId: user.id,
+                    members: { create: { userId: user.id, roleInProject: "Chủ nhiệm", allocation: 100 } },
+               }, include: { owner: { select: { id: true, fullName: true, position: true, department: true } } } });
+               await createAuditLog({ request, user, entity: "Project", entityId: created.id, action: "CREATE",
+                    payload: { after: compactProjectForAudit(created) } }, tx);
+               return created;
           });
-
-          // Auto-add owner as member with "Chủ nhiệm" role
-          await prisma.projectMember.create({
-               data: {
-                    projectId: project.id,
-                    userId: user.id,
-                    roleInProject: "Chủ nhiệm",
-                    allocation: 100,
-               },
-          });
-
-          await createAuditLog({
-               request,
-               user,
-               entity: "Project",
-               entityId: project.id,
-               action: "CREATE",
-               payload: {
-                    after: compactProjectForAudit(project),
-               },
-          });
-
           return successResponse(project, 201);
-     } catch (error) {
-          console.error("POST /api/projects error:", error);
-          return errorResponse("Không thể tạo dự án", 500);
-     }
+     } catch (error) { return failureResponse(error, "Không thể tạo dự án"); }
 }

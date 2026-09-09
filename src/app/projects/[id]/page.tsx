@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import AppLayout from "@/components/AppLayout";
 import {
@@ -33,9 +33,7 @@ export default function ProjectDetailPage() {
      const [project, setProject] = useState<any>(null);
      const [loading, setLoading] = useState(true);
 
-     useEffect(() => { fetchProject(); }, [projectId]);
-
-     const fetchProject = async () => {
+     const fetchProject = useCallback(async () => {
           setLoading(true);
           try {
                const res = await axios.get(`/api/projects/${projectId}`);
@@ -43,7 +41,9 @@ export default function ProjectDetailPage() {
                else { message.error("Không tìm thấy dự án"); router.push("/projects"); }
           } catch { message.error("Lỗi tải dữ liệu"); router.push("/projects"); }
           finally { setLoading(false); }
-     };
+     }, [projectId, router]);
+
+     useEffect(() => { void fetchProject(); }, [fetchProject]);
 
      if (loading) {
           return (<AppLayout><div style={{ textAlign: "center", padding: 100 }}><Spin size="large" tip="Đang tải thông tin dự án..." /></div></AppLayout>);
@@ -77,8 +77,8 @@ export default function ProjectDetailPage() {
                          <Descriptions.Item label="Chủ nhiệm"><Space>{project.owner?.fullName}{project.owner?.position && <Text type="secondary">({project.owner.position})</Text>}</Space></Descriptions.Item>
                          <Descriptions.Item label="Bộ môn / Phòng ban">{project.owner?.department || "—"}</Descriptions.Item>
                          <Descriptions.Item label="Năm thực hiện"><Tag color="blue">{project.year}</Tag></Descriptions.Item>
-                         <Descriptions.Item label="Tổng kinh phí"><Text strong style={{ color: "#cf1322" }}>{formatCurrency(project.totalBudget)}</Text></Descriptions.Item>
-                         <Descriptions.Item label="Bằng chữ" span={2}><Text italic>{amountToWords(project.totalBudget)}</Text></Descriptions.Item>
+                         <Descriptions.Item label="Tổng kinh phí"><Text strong style={{ color: "#cf1322" }}>{project.totalBudget == null ? "Không có quyền xem" : formatCurrency(project.totalBudget)}</Text></Descriptions.Item>
+                         <Descriptions.Item label="Bằng chữ" span={2}><Text italic>{project.totalBudget == null ? "—" : amountToWords(project.totalBudget)}</Text></Descriptions.Item>
                          <Descriptions.Item label="Nguồn kinh phí">{project.fundingSource || "—"}</Descriptions.Item>
                          <Descriptions.Item label="Thời gian thực hiện">{formatDate(project.startDate)} — {formatDate(project.endDate)}</Descriptions.Item>
                          <Descriptions.Item label="Trạng thái"><Tag color={STATUS_COLORS[project.status]}>{STATUS_LABELS[project.status]}</Tag></Descriptions.Item>
@@ -113,9 +113,9 @@ export default function ProjectDetailPage() {
           { key: "budget", label: <span><DollarOutlined /> Ngân sách & Dự toán</span>, children: (
                <>
                     <Row gutter={16} style={{ marginBottom: 16 }}>
-                         <Col span={8}><Card><Statistic title="Tổng kinh phí được duyệt" value={Number(project.totalBudget)} formatter={(v) => formatVND(v as number) + " VNĐ"} valueStyle={{ color: "#1677ff" }} /></Card></Col>
+                         <Col span={8}><Card><Statistic title="Tổng kinh phí được duyệt" value={Number(project.totalBudget)} formatter={(v) => project.totalBudget == null ? "Không có quyền xem" : formatVND(v as number) + " VNĐ"} valueStyle={{ color: "#1677ff" }} /></Card></Col>
                          <Col span={8}><Card><Statistic title="Kinh phí dự toán" value={totalBudgetPlanned} formatter={(v) => formatVND(v as number) + " VNĐ"} valueStyle={{ color: "#faad14" }} /></Card></Col>
-                         <Col span={8}><Card><Statistic title="Đã thanh toán" value={totalBudgetPaid} formatter={(v) => formatVND(v as number) + " VNĐ"} valueStyle={{ color: "#52c41a" }} /></Card></Col>
+                         <Col span={8}><Card><Statistic title="Đã thanh toán" value={totalBudgetPaid} formatter={(v) => project.paymentRecords === undefined ? "Chưa có dữ liệu trong phạm vi" : formatVND(v as number) + " VNĐ"} valueStyle={{ color: "#52c41a" }} /></Card></Col>
                     </Row>
                     <Card title="Hạng mục dự toán" extra={<Space><Upload showUploadList={false} accept=".xlsx,.xls,.pdf"><Button icon={<UploadOutlined />}>Upload file dự toán</Button></Upload><Button type="primary" size="small" icon={<PlusOutlined />}>Thêm hạng mục</Button></Space>}>
                          <Table dataSource={project.budgetItems || []} rowKey="id" size="middle" pagination={false}

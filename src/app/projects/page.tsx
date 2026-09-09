@@ -142,8 +142,8 @@ export default function ProjectsPage() {
           try {
                const payload = {
                     ...values,
-                    startDate: values.startDate?.toISOString(),
-                    endDate: values.endDate?.toISOString(),
+                    startDate: values.startDate?.format("YYYY-MM-DD"),
+                    endDate: values.endDate?.format("YYYY-MM-DD"),
                };
                const res = await axios.post("/api/projects", payload);
                if (res.data.success) {
@@ -165,12 +165,12 @@ export default function ProjectsPage() {
           try {
                const res = await axios.delete(`/api/projects/${id}`);
                if (res.data.success) {
-                    message.success("Đã xóa dự án");
+                    message.success("Đã lưu trữ dự án");
                     fetchProjects();
                }
           } catch (err: any) {
                message.error(
-                    err.response?.data?.error || "Không thể xóa dự án",
+                    err.response?.data?.error || "Không thể lưu trữ dự án",
                );
           }
      };
@@ -218,7 +218,7 @@ export default function ProjectsPage() {
                key: "totalBudget",
                width: 170,
                align: "right" as const,
-               render: (val: string) => formatVND(val) + " VNĐ",
+               render: (val: string | null | undefined) => val == null ? "Không có quyền xem" : formatVND(val) + " VNĐ",
           },
           {
                title: "Trạng thái",
@@ -249,10 +249,10 @@ export default function ProjectsPage() {
                               />
                          </Tooltip>
                          <Popconfirm
-                              title="Xác nhận xóa?"
+                              title="Lưu trữ đề tài và giữ nguyên hồ sơ?"
                               onConfirm={() => handleDelete(record.id)}
                          >
-                              <Tooltip title="Xóa">
+                              <Tooltip title="Lưu trữ">
                                    <Button
                                         type="text"
                                         size="small"

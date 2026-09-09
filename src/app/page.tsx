@@ -126,7 +126,7 @@ export default function DashboardPage() {
                key: "totalBudget",
                width: 160,
                align: "right" as const,
-               render: (val: string) => formatVND(val) + " VNĐ",
+               render: (val: string | null | undefined) => val == null ? "Không có quyền xem" : formatVND(val) + " VNĐ",
           },
           {
                title: "Trạng thái",
@@ -267,7 +267,7 @@ export default function DashboardPage() {
                >
                     <Statistic
                          value={data.stats.totalBudget}
-                         formatter={(value) => formatVND(value as string)}
+                         formatter={(value) => data.stats.totalBudget == null ? "Không có quyền xem" : formatVND(value as string)}
                          suffix="VNĐ"
                     />
                </Card>

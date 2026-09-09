@@ -1,0 +1,210 @@
+{
+  "syncStatus": "partial",
+  "modules": {
+    "M01": {
+      "plane": {
+        "id": "468d1ee0-8394-4404-94c2-4f602fa02091",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/468d1ee0-8394-4404-94c2-4f602fa02091"
+      },
+      "github": {
+        "number": 1,
+        "id": 5389745714,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/1"
+      }
+    },
+    "M09": {
+      "github": {
+        "number": 2,
+        "id": 5389745953,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/2"
+      }
+    },
+    "M10": {
+      "github": {
+        "number": 3,
+        "id": 5389746315,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/3"
+      }
+    }
+  },
+  "cycles": {
+    "C01": {
+      "github": {
+        "number": 1,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/1"
+      },
+      "plane": {
+        "id": "568ecb7c-421b-492a-9106-7cdd6f873a60",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/568ecb7c-421b-492a-9106-7cdd6f873a60"
+      }
+    },
+    "C03": {
+      "github": {
+        "number": 2,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/2"
+      }
+    },
+    "C10": {
+      "github": {
+        "number": 3,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/3"
+      }
+    }
+  },
+  "workItems": {
+    "CORE-001": {
+      "status": "in_progress",
+      "progressNotes": [
+        "Baseline migration đạt; restore fixture đối soát 10 bảng. Chưa đối soát bản sao dữ liệu production.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 7,
+          "id": 5389747313,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/7"
+        }
+      }
+    },
+    "CORE-002": {
+      "status": "in_progress",
+      "progressNotes": [
+        "Đã thay xóa bằng lưu trữ; kiểm thử bảo toàn hợp đồng/thanh toán và rollback đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 9,
+          "id": 5389747684,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/9"
+        }
+      }
+    },
+    "CORE-003": {
+      "status": "in_progress",
+      "progressNotes": [
+        "Validation tiền Decimal/ngày/JSON/phân trang; kiểm thử biên và API đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 10,
+          "id": 5389747972,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/10"
+        }
+      }
+    },
+    "QA-001": {
+      "status": "in_progress",
+      "progressNotes": [
+        "Typecheck, lint, build, 5 unit và 6 case integration local đạt; 5 test backlog đạt. Chờ CI từ xa.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 11,
+          "id": 5389748124,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/11"
+        }
+      }
+    },
+    "LINK-001": {
+      "status": "in_progress",
+      "progressNotes": [
+        "Kiểm tra 51 item/11 module/10 cycle/80 dependency; mapping tái xuất được bảo toàn.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 13,
+          "id": 5389748671,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/13"
+        }
+      }
+    },
+    "LINK-002": {
+      "status": "in_progress",
+      "progressNotes": [
+        "Mapping và đồng bộ GitHub đang triển khai; Plane chưa tự động hóa.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 14,
+          "id": 5389748856,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/14"
+        }
+      }
+    },
+    "OPS-001": {
+      "status": "planned",
+      "progressNotes": [
+        "Giữ C10: chờ MVP-001 và REPORT-001; chưa triển khai production.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 12,
+          "id": 5389748437,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/12"
+        }
+      }
+    },
+    "SEC-001": {
+      "status": "in_progress",
+      "progressNotes": [
+        "JWT fail closed, HS256, payload/expiry và tài khoản hoạt động; kiểm thử đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 4,
+          "id": 5389746678,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/4"
+        }
+      }
+    },
+    "SEC-002": {
+      "status": "in_progress",
+      "progressNotes": [
+        "Giới hạn dữ liệu theo vai trò và người dùng; kiểm thử truy cập chéo đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 5,
+          "id": 5389746897,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/5"
+        }
+      }
+    },
+    "SEC-003": {
+      "status": "in_progress",
+      "progressNotes": [
+        "Làm sạch HTML ở đọc/ghi; kiểm thử XSS đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 6,
+          "id": 5389747095,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/6"
+        }
+      }
+    },
+    "AUD-001": {
+      "status": "in_progress",
+      "progressNotes": [
+        "Transaction audit cho create/update/archive; thử lỗi audit rollback đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 8,
+          "id": 5389747493,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/8"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import prisma from "@/lib/prisma";
+import { Prisma } from "@prisma/client";
 
 type AuditAction = "CREATE" | "UPDATE" | "DELETE" | "EXPORT";
 
@@ -23,14 +23,14 @@ export async function createAuditLog({
      entityId,
      action,
      payload,
-}: CreateAuditLogParams) {
+}: CreateAuditLogParams, tx: Prisma.TransactionClient) {
      const forwardedFor = request.headers.get("x-forwarded-for");
      const ipAddress =
           forwardedFor?.split(",")[0]?.trim() ||
           request.headers.get("x-real-ip") ||
           null;
 
-     await prisma.auditLog.create({
+     await tx.auditLog.create({
           data: {
                entity,
                entityId,

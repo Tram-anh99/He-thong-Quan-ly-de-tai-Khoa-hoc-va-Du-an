@@ -1,7 +1,9 @@
 import { NextRequest } from "next/server";
 import prisma from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth";
-import { errorResponse, paginatedResponse } from "@/lib/api-helpers";
+import { errorResponse, paginatedResponse, failureResponse } from "@/lib/api-helpers";
+
+import { pagination } from "@/lib/validation";
 
 export const dynamic = "force-dynamic";
 
@@ -14,8 +16,7 @@ export async function GET(request: NextRequest) {
           }
 
           const { searchParams } = new URL(request.url);
-          const page = parseInt(searchParams.get("page") || "1");
-          const pageSize = parseInt(searchParams.get("pageSize") || "20");
+          const { page, pageSize } = pagination(searchParams, 20);
           const entity = searchParams.get("entity");
           const action = searchParams.get("action");
 
@@ -60,7 +61,6 @@ export async function GET(request: NextRequest) {
                pageSize,
           );
      } catch (error) {
-          console.error("GET /api/audit-logs error:", error);
-          return errorResponse("Không thể tải lịch sử thao tác", 500);
+          return failureResponse(error, "Không thể tải lịch sử thao tác");
      }
 }

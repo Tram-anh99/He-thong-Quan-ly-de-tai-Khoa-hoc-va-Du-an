@@ -1,0 +1,52 @@
+{
+  "source": "research_m01_test",
+  "restoredDatabase": "research_m01_test_restore_1788887333",
+  "matched": true,
+  "dataKind": "synthetic-test-fixtures-not-production",
+  "tables": {
+    "users": {
+      "count": 10,
+      "digest": "c64ea932757277a311d01584c5adf8a9"
+    },
+    "projects": {
+      "count": 4,
+      "digest": "aef469c01d0569c68913b6cbcc132fa5",
+      "sum": "1999999999999999999.98"
+    },
+    "project_documents": {
+      "count": 1,
+      "digest": "4aacad13902325954d4f286ed0162388"
+    },
+    "project_members": {
+      "count": 6,
+      "digest": "081edec4a61deac1df78973a465b6073"
+    },
+    "budget_items": {
+      "count": 1,
+      "digest": "46e23159157dbd3a9bde2d7e7f78c68b",
+      "sum": "50.01"
+    },
+    "contracts": {
+      "count": 2,
+      "digest": "11186368fa104a05042e40b71b59884e",
+      "sum": "246.90"
+    },
+    "products": {
+      "count": 1,
+      "digest": "f2e97d1a705d26af03dd0753bc848586"
+    },
+    "payment_records": {
+      "count": 2,
+      "digest": "d3e084688e76d1f760673cddea6e670e",
+      "sum": "24.68"
+    },
+    "document_templates": {
+      "count": 1,
+      "digest": "22c02e4d55119ab2ef7b2cd16821a27f"
+    },
+    "audit_logs": {
+      "count": 6,
+      "digest": "1d5773dbe732ae2667c16689a6f8e63e"
+    }
+  }
+}

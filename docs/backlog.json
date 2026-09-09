@@ -1,0 +1,1695 @@
+{
+  "schemaVersion": 1,
+  "format": "internal-backlog-not-native-import",
+  "source": "docs/research-budget-requirements.md",
+  "syncStatus": "partial",
+  "modules": [
+    {
+      "id": "M01",
+      "name": "Nền tảng và cơ sở dữ liệu",
+      "externalMappings": {
+        "plane": {
+          "id": "468d1ee0-8394-4404-94c2-4f602fa02091",
+          "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/468d1ee0-8394-4404-94c2-4f602fa02091"
+        },
+        "github": {
+          "number": 1,
+          "id": 5389745714,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/1"
+        }
+      }
+    },
+    {
+      "id": "M02",
+      "name": "Nhân sự và năng lực",
+      "externalMappings": {}
+    },
+    {
+      "id": "M03",
+      "name": "Đề tài, công việc và hợp đồng",
+      "externalMappings": {}
+    },
+    {
+      "id": "M04",
+      "name": "Quy định và định mức",
+      "externalMappings": {}
+    },
+    {
+      "id": "M05",
+      "name": "Phân bổ ngân sách và thanh toán",
+      "externalMappings": {}
+    },
+    {
+      "id": "M06",
+      "name": "Thu nhập và thuế",
+      "externalMappings": {}
+    },
+    {
+      "id": "M07",
+      "name": "Mô phỏng kế hoạch",
+      "externalMappings": {}
+    },
+    {
+      "id": "M08",
+      "name": "Dashboard và phân tích",
+      "externalMappings": {}
+    },
+    {
+      "id": "M09",
+      "name": "Xác thực và phân quyền",
+      "externalMappings": {
+        "github": {
+          "number": 2,
+          "id": 5389745953,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/2"
+        }
+      }
+    },
+    {
+      "id": "M10",
+      "name": "Hồ sơ, báo cáo và kiểm toán",
+      "externalMappings": {
+        "github": {
+          "number": 3,
+          "id": 5389746315,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/3"
+        }
+      }
+    },
+    {
+      "id": "M11",
+      "name": "Thông báo và nhắc hạn",
+      "externalMappings": {}
+    }
+  ],
+  "cycles": [
+    {
+      "id": "C01",
+      "name": "Nền tảng và bảo vệ dữ liệu",
+      "sequence": 1,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {
+        "github": {
+          "number": 1,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/1"
+        },
+        "plane": {
+          "id": "568ecb7c-421b-492a-9106-7cdd6f873a60",
+          "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/568ecb7c-421b-492a-9106-7cdd6f873a60"
+        }
+      }
+    },
+    {
+      "id": "C02",
+      "name": "Nhân sự và năng lực",
+      "sequence": 2,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {}
+    },
+    {
+      "id": "C03",
+      "name": "Công việc, hợp đồng và cấu hình hồ sơ",
+      "sequence": 3,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {
+        "github": {
+          "number": 2,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/2"
+        }
+      }
+    },
+    {
+      "id": "C04",
+      "name": "Định mức, phiên bản hồ sơ và lịch nhắc",
+      "sequence": 4,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {}
+    },
+    {
+      "id": "C05",
+      "name": "Phân bổ, thanh toán, nhắc hạn và nghiệm thu MVP",
+      "sequence": 5,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {}
+    },
+    {
+      "id": "C06",
+      "name": "Thu nhập và thuế",
+      "sequence": 6,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {}
+    },
+    {
+      "id": "C07",
+      "name": "Mô phỏng kế hoạch",
+      "sequence": 7,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {}
+    },
+    {
+      "id": "C08",
+      "name": "Dashboard theo vai trò",
+      "sequence": 8,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {}
+    },
+    {
+      "id": "C09",
+      "name": "Kiểm toán và phân quyền mở rộng",
+      "sequence": 9,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {}
+    },
+    {
+      "id": "C10",
+      "name": "Báo cáo, vận hành và phục hồi",
+      "sequence": 10,
+      "startDate": null,
+      "endDate": null,
+      "externalMappings": {
+        "github": {
+          "number": 3,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/3"
+        }
+      }
+    }
+  ],
+  "workItems": [
+    {
+      "id": "SEC-001",
+      "title": "Bảo vệ phiên đăng nhập và từ chối tài khoản đã khóa",
+      "primaryModuleId": "M09",
+      "cycleId": "C01",
+      "priority": "P0",
+      "status": "in_progress",
+      "description": "Bỏ secret mặc định, validate token, từ chối user đã khóa; token sai/hết hạn nhận 401",
+      "acceptanceCriteria": [
+        "Bỏ secret mặc định, validate token, từ chối user đã khóa; token sai/hết hạn nhận 401"
+      ],
+      "dependsOnIds": [],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 4,
+          "id": 5389746678,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/4"
+        }
+      },
+      "progressNotes": [
+        "JWT fail closed, HS256, payload/expiry và tài khoản hoạt động; kiểm thử đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "SEC-002",
+      "title": "Giới hạn dữ liệu dự án và dashboard theo quyền người dùng",
+      "primaryModuleId": "M09",
+      "cycleId": "C01",
+      "priority": "P0",
+      "status": "in_progress",
+      "description": "Lọc project/list/detail/dashboard theo vai trò; test truy cập chéo và trường riêng tư",
+      "acceptanceCriteria": [
+        "Lọc project/list/detail/dashboard theo vai trò; test truy cập chéo và trường riêng tư"
+      ],
+      "dependsOnIds": [
+        "SEC-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 5,
+          "id": 5389746897,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/5"
+        }
+      },
+      "progressNotes": [
+        "Giới hạn dữ liệu theo vai trò và người dùng; kiểm thử truy cập chéo đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "SEC-003",
+      "title": "Làm sạch nội dung HTML thuyết minh đề tài",
+      "primaryModuleId": "M09",
+      "cycleId": "C01",
+      "priority": "P0",
+      "status": "in_progress",
+      "description": "Làm sạch fullText; script và event handler không thực thi",
+      "acceptanceCriteria": [
+        "Làm sạch fullText; script và event handler không thực thi"
+      ],
+      "dependsOnIds": [],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 6,
+          "id": 5389747095,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/6"
+        }
+      },
+      "progressNotes": [
+        "Làm sạch HTML ở đọc/ghi; kiểm thử XSS đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "CORE-001",
+      "title": "Thiết lập migration và kiểm tra phục hồi dữ liệu hiện có",
+      "primaryModuleId": "M01",
+      "cycleId": "C01",
+      "priority": "P0",
+      "status": "in_progress",
+      "description": "Baseline migration, backup/restore thử trên bản sao; giữ số bản ghi và tổng tiền",
+      "acceptanceCriteria": [
+        "Baseline migration, backup/restore thử trên bản sao; giữ số bản ghi và tổng tiền"
+      ],
+      "dependsOnIds": [],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 7,
+          "id": 5389747313,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/7"
+        }
+      },
+      "progressNotes": [
+        "Baseline migration đạt; restore fixture đối soát 10 bảng. Chưa đối soát bản sao dữ liệu production.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "AUD-001",
+      "title": "Ghi nhật ký cùng giao dịch thay đổi dữ liệu",
+      "primaryModuleId": "M10",
+      "cycleId": "C01",
+      "priority": "P0",
+      "status": "in_progress",
+      "description": "Mutation và audit cùng transaction; lỗi audit rollback mutation",
+      "acceptanceCriteria": [
+        "Mutation và audit cùng transaction; lỗi audit rollback mutation"
+      ],
+      "dependsOnIds": [
+        "CORE-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 8,
+          "id": 5389747493,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/8"
+        }
+      },
+      "progressNotes": [
+        "Transaction audit cho create/update/archive; thử lỗi audit rollback đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "CORE-002",
+      "title": "Lưu trữ đề tài có phát sinh tài chính",
+      "primaryModuleId": "M01",
+      "cycleId": "C01",
+      "priority": "P0",
+      "status": "in_progress",
+      "description": "Lưu trữ đề tài có phát sinh thay xóa cascade; chứng từ vẫn truy vấn được",
+      "acceptanceCriteria": [
+        "Lưu trữ đề tài có phát sinh thay xóa cascade; chứng từ vẫn truy vấn được"
+      ],
+      "dependsOnIds": [
+        "AUD-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 9,
+          "id": 5389747684,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/9"
+        }
+      },
+      "progressNotes": [
+        "Đã thay xóa bằng lưu trữ; kiểm thử bảo toàn hợp đồng/thanh toán và rollback đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "CORE-003",
+      "title": "Kiểm tra dữ liệu đầu vào và chuẩn hóa số tiền",
+      "primaryModuleId": "M01",
+      "cycleId": "C01",
+      "priority": "P1",
+      "status": "in_progress",
+      "description": "Validate payload/filter/pagination, tiền Decimal; dữ liệu sai trả 4xx",
+      "acceptanceCriteria": [
+        "Validate payload/filter/pagination, tiền Decimal; dữ liệu sai trả 4xx"
+      ],
+      "dependsOnIds": [],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 10,
+          "id": 5389747972,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/10"
+        }
+      },
+      "progressNotes": [
+        "Validation tiền Decimal/ngày/JSON/phân trang; kiểm thử biên và API đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "QA-001",
+      "title": "Thiết lập kiểm thử tự động và kiểm tra phân quyền",
+      "primaryModuleId": "M01",
+      "cycleId": "C01",
+      "priority": "P1",
+      "status": "in_progress",
+      "description": "Lệnh test/typecheck/lint không tương tác và CI; có test phân quyền thất bại",
+      "acceptanceCriteria": [
+        "Lệnh test/typecheck/lint không tương tác và CI; có test phân quyền thất bại"
+      ],
+      "dependsOnIds": [
+        "SEC-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 11,
+          "id": 5389748124,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/11"
+        }
+      },
+      "progressNotes": [
+        "Typecheck, lint, build, 5 unit và 6 case integration local đạt; 5 test backlog đạt. Chờ CI từ xa.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "PEOPLE-001",
+      "title": "Quản lý hồ sơ nhân sự độc lập tài khoản đăng nhập",
+      "primaryModuleId": "M02",
+      "cycleId": "C02",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Person tách User, CRUD và link account; cộng tác viên không cần login",
+      "acceptanceCriteria": [
+        "Person tách User, CRUD và link account; cộng tác viên không cần login"
+      ],
+      "dependsOnIds": [
+        "CORE-001",
+        "SEC-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "PEOPLE-002",
+      "title": "Quản lý lịch sử lương và người phụ thuộc",
+      "primaryModuleId": "M02",
+      "cycleId": "C02",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "SalaryHistory/DependentHistory có hiệu lực; chặn chồng lấn và đọc trái quyền",
+      "acceptanceCriteria": [
+        "SalaryHistory/DependentHistory có hiệu lực; chặn chồng lấn và đọc trái quyền"
+      ],
+      "dependsOnIds": [
+        "PEOPLE-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "PEOPLE-003",
+      "title": "Quản lý kỹ năng và kinh nghiệm nhân sự",
+      "primaryModuleId": "M02",
+      "cycleId": "C02",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Competency và kinh nghiệm theo thời điểm; sửa hồ sơ có audit",
+      "acceptanceCriteria": [
+        "Competency và kinh nghiệm theo thời điểm; sửa hồ sơ có audit"
+      ],
+      "dependsOnIds": [
+        "PEOPLE-001",
+        "AUD-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "PEOPLE-004",
+      "title": "Cấu hình sức chứa ngày công theo người và tháng",
+      "primaryModuleId": "M02",
+      "cycleId": "C02",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Capacity theo người/tháng; tháng thiếu capacity báo chưa cấu hình",
+      "acceptanceCriteria": [
+        "Capacity theo người/tháng; tháng thiếu capacity báo chưa cấu hình"
+      ],
+      "dependsOnIds": [
+        "PEOPLE-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "WORK-001",
+      "title": "Quản lý nội dung và công việc của đề tài",
+      "primaryModuleId": "M03",
+      "cycleId": "C03",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Content/WorkItem CRUD; chặn liên kết chéo dự án và ngày ngoài khoảng cho phép",
+      "acceptanceCriteria": [
+        "Content/WorkItem CRUD; chặn liên kết chéo dự án và ngày ngoài khoảng cho phép"
+      ],
+      "dependsOnIds": [
+        "CORE-003",
+        "SEC-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "WORK-002",
+      "title": "Phân công thành viên thực hiện công việc",
+      "primaryModuleId": "M03",
+      "cycleId": "C03",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "API thành viên, nối nút UI; chủ nhiệm chỉ phân công trong dự án của mình",
+      "acceptanceCriteria": [
+        "API thành viên, nối nút UI; chủ nhiệm chỉ phân công trong dự án của mình"
+      ],
+      "dependsOnIds": [
+        "PEOPLE-001",
+        "WORK-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "WORK-003",
+      "title": "Chuyển đổi và đối soát hạng mục ngân sách cũ",
+      "primaryModuleId": "M03",
+      "cycleId": "C03",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Mapping BudgetItem cũ; khoản chưa đủ thông tin xuất danh sách đối soát",
+      "acceptanceCriteria": [
+        "Mapping BudgetItem cũ; khoản chưa đủ thông tin xuất danh sách đối soát"
+      ],
+      "dependsOnIds": [
+        "WORK-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "RULE-001",
+      "title": "Quản lý bộ định mức và phiên bản văn bản áp dụng",
+      "primaryModuleId": "M04",
+      "cycleId": "C04",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "RuleSet/version và nguồn văn bản; draft chưa được áp dụng chính thức",
+      "acceptanceCriteria": [
+        "RuleSet/version và nguồn văn bản; draft chưa được áp dụng chính thức"
+      ],
+      "dependsOnIds": [
+        "CORE-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "RULE-002",
+      "title": "Cấu hình đơn giá và điều kiện áp dụng định mức",
+      "primaryModuleId": "M04",
+      "cycleId": "C04",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Đơn giá/đơn vị, điều kiện vai trò/kỹ năng/kinh nghiệm; kiểm tra tại ngày thực hiện",
+      "acceptanceCriteria": [
+        "Đơn giá/đơn vị, điều kiện vai trò/kỹ năng/kinh nghiệm; kiểm tra tại ngày thực hiện"
+      ],
+      "dependsOnIds": [
+        "RULE-001",
+        "PEOPLE-003"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "RULE-003",
+      "title": "Tính và giải thích kết quả định mức",
+      "primaryModuleId": "M04",
+      "cycleId": "C04",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Công thức có whitelist, không eval; lưu giải thích, kiểm thử ngưỡng và hiệu lực",
+      "acceptanceCriteria": [
+        "Công thức có whitelist, không eval; lưu giải thích, kiểm thử ngưỡng và hiệu lực"
+      ],
+      "dependsOnIds": [
+        "RULE-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "RULE-004",
+      "title": "Kiểm soát trần ngày công và kinh phí theo định mức",
+      "primaryModuleId": "M04",
+      "cycleId": "C04",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Trần công/tiền/công việc/nội dung; phiên bản đã dùng bất biến",
+      "acceptanceCriteria": [
+        "Trần công/tiền/công việc/nội dung; phiên bản đã dùng bất biến"
+      ],
+      "dependsOnIds": [
+        "RULE-003",
+        "WORK-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "ALLOC-001",
+      "title": "Phân bổ ngày công và kinh phí theo người, công việc và tháng",
+      "primaryModuleId": "M05",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Allocation người × công việc × tháng; tách allowed/allocated, CRUD có lý do",
+      "acceptanceCriteria": [
+        "Allocation người × công việc × tháng; tách allowed/allocated, CRUD có lý do"
+      ],
+      "dependsOnIds": [
+        "RULE-004",
+        "WORK-002",
+        "AUD-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "ALLOC-002",
+      "title": "Ngăn vượt ngân sách khi nhiều người phân bổ đồng thời",
+      "primaryModuleId": "M05",
+      "cycleId": "C05",
+      "priority": "P0",
+      "status": "backlog",
+      "description": "Kiểm tra trần trong transaction; test hai request cạnh tranh chỉ một được vượt đến giới hạn",
+      "acceptanceCriteria": [
+        "Kiểm tra trần trong transaction; test hai request cạnh tranh chỉ một được vượt đến giới hạn"
+      ],
+      "dependsOnIds": [
+        "ALLOC-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "ALLOC-003",
+      "title": "Theo dõi tổng ngày công qua nhiều đề tài",
+      "primaryModuleId": "M05",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Cộng workload nhiều dự án, planned/actual riêng; cảnh báo đúng ngưỡng capacity",
+      "acceptanceCriteria": [
+        "Cộng workload nhiều dự án, planned/actual riêng; cảnh báo đúng ngưỡng capacity"
+      ],
+      "dependsOnIds": [
+        "ALLOC-001",
+        "PEOPLE-004"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "PAY-001",
+      "title": "Ghi nhận thanh toán nhiều đợt theo người nhận",
+      "primaryModuleId": "M05",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Giao dịch thanh toán từng đợt, người nhận, chứng từ; pending không cộng paid",
+      "acceptanceCriteria": [
+        "Giao dịch thanh toán từng đợt, người nhận, chứng từ; pending không cộng paid"
+      ],
+      "dependsOnIds": [
+        "ALLOC-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "PAY-002",
+      "title": "Ngăn ghi trùng thanh toán và kiểm soát điều chỉnh kỳ đã khóa",
+      "primaryModuleId": "M05",
+      "cycleId": "C05",
+      "priority": "P0",
+      "status": "backlog",
+      "description": "Idempotency, điều chỉnh có liên kết, khóa kỳ; gửi lại không ghi trùng",
+      "acceptanceCriteria": [
+        "Idempotency, điều chỉnh có liên kết, khóa kỳ; gửi lại không ghi trùng"
+      ],
+      "dependsOnIds": [
+        "PAY-001",
+        "AUD-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "VIEW-001",
+      "title": "Hiển thị ma trận phân bổ theo tháng và chi tiết công việc",
+      "primaryModuleId": "M08",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Matrix tiền/ngày, tổng quý/năm và drawer; tổng ô khớp chi tiết",
+      "acceptanceCriteria": [
+        "Matrix tiền/ngày, tổng quý/năm và drawer; tổng ô khớp chi tiết"
+      ],
+      "dependsOnIds": [
+        "ALLOC-003"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "VIEW-002",
+      "title": "Hiển thị tổng ngân sách và heatmap ngày công",
+      "primaryModuleId": "M08",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Dashboard/heatmap workload và budget; số tổng đúng quyền và hai loại remaining",
+      "acceptanceCriteria": [
+        "Dashboard/heatmap workload và budget; số tổng đúng quyền và hai loại remaining"
+      ],
+      "dependsOnIds": [
+        "VIEW-001",
+        "PAY-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "MVP-001",
+      "title": "Nghiệm thu MVP và đối soát dữ liệu chuyển đổi",
+      "primaryModuleId": "M10",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "UAT với quản lý/kế toán/PI/member, migration diễn tập và đối soát tiền; không còn lỗi P0, quan hệ backlog và nhắc hạn/hồ sơ đạt nghiệm thu",
+      "acceptanceCriteria": [
+        "UAT với quản lý/kế toán/PI/member, migration diễn tập và đối soát tiền; không còn lỗi P0, quan hệ backlog và nhắc hạn/hồ sơ đạt nghiệm thu"
+      ],
+      "dependsOnIds": [
+        "QA-001",
+        "WORK-003",
+        "VIEW-002",
+        "LINK-002",
+        "DOC-003",
+        "NOTICE-003",
+        "PAY-004"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "TAX-001",
+      "title": "Xác minh và quản lý phiên bản chính sách thuế",
+      "primaryModuleId": "M06",
+      "cycleId": "C06",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "Xác minh văn bản chính thức, TaxPolicy version và duyệt cấu hình; thiếu policy không tính",
+      "acceptanceCriteria": [
+        "Xác minh văn bản chính thức, TaxPolicy version và duyệt cấu hình; thiếu policy không tính"
+      ],
+      "dependsOnIds": [
+        "PEOPLE-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "TAX-002",
+      "title": "Tổng hợp thu nhập từ lương và các nguồn khác",
+      "primaryModuleId": "M06",
+      "cycleId": "C06",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "Sổ thu nhập lương/nguồn khác, phân loại khoản chi; không đếm trùng Payment",
+      "acceptanceCriteria": [
+        "Sổ thu nhập lương/nguồn khác, phân loại khoản chi; không đếm trùng Payment"
+      ],
+      "dependsOnIds": [
+        "TAX-001",
+        "PAY-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "TAX-003",
+      "title": "Tính thuế theo chính sách và kiểm thử các ngưỡng",
+      "primaryModuleId": "M06",
+      "cycleId": "C06",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "Engine giảm trừ/biểu thuế/khấu trừ/làm tròn; test sát mọi ngưỡng, đổi năm và hiệu lực",
+      "acceptanceCriteria": [
+        "Engine giảm trừ/biểu thuế/khấu trừ/làm tròn; test sát mọi ngưỡng, đổi năm và hiệu lực"
+      ],
+      "dependsOnIds": [
+        "TAX-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "TAX-004",
+      "title": "Theo dõi sổ thuế tháng và ước tính quyết toán năm",
+      "primaryModuleId": "M06",
+      "cycleId": "C06",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "Ledger tháng và ước tính quyết toán năm; tách dự kiến/khấu trừ thật và đánh dấu thiếu dữ liệu",
+      "acceptanceCriteria": [
+        "Ledger tháng và ước tính quyết toán năm; tách dự kiến/khấu trừ thật và đánh dấu thiếu dữ liệu"
+      ],
+      "dependsOnIds": [
+        "TAX-003"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "SCEN-001",
+      "title": "Tạo và chỉnh sửa kịch bản phân bổ độc lập",
+      "primaryModuleId": "M07",
+      "cycleId": "C07",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "Snapshot baseline và sửa allocation kịch bản; không ghi Payment/ledger thật",
+      "acceptanceCriteria": [
+        "Snapshot baseline và sửa allocation kịch bản; không ghi Payment/ledger thật"
+      ],
+      "dependsOnIds": [
+        "ALLOC-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "SCEN-002",
+      "title": "So sánh và phê duyệt áp dụng kịch bản phân bổ",
+      "primaryModuleId": "M07",
+      "cycleId": "C07",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "So sánh ngân sách/công/thuế; duyệt áp dụng chặn baseline cũ và chạy lại validator",
+      "acceptanceCriteria": [
+        "So sánh ngân sách/công/thuế; duyệt áp dụng chặn baseline cũ và chạy lại validator"
+      ],
+      "dependsOnIds": [
+        "SCEN-001",
+        "TAX-004"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "VIEW-003",
+      "title": "Hiển thị heatmap thu nhập và dashboard theo vai trò",
+      "primaryModuleId": "M08",
+      "cycleId": "C08",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "Heatmap income, mode tax/net, dashboard vai trò; drilldown đúng tổng và quyền",
+      "acceptanceCriteria": [
+        "Heatmap income, mode tax/net, dashboard vai trò; drilldown đúng tổng và quyền"
+      ],
+      "dependsOnIds": [
+        "TAX-004",
+        "VIEW-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "SEC-004",
+      "title": "Cấp quyền kiểm toán và kiểm tra bảo vệ dữ liệu tại cơ sở dữ liệu",
+      "primaryModuleId": "M09",
+      "cycleId": "C09",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "AUDITOR phạm vi được cấp, RLS nếu áp dụng; test connection pool không rò identity",
+      "acceptanceCriteria": [
+        "AUDITOR phạm vi được cấp, RLS nếu áp dụng; test connection pool không rò identity"
+      ],
+      "dependsOnIds": [
+        "SEC-002",
+        "TAX-004"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "REPORT-001",
+      "title": "Xuất Excel thu nhập và ngân sách theo quyền truy cập",
+      "primaryModuleId": "M10",
+      "cycleId": "C10",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "Excel thu nhập/ngân sách, bộ lọc và tổng đối soát; chống formula injection và lọc quyền",
+      "acceptanceCriteria": [
+        "Excel thu nhập/ngân sách, bộ lọc và tổng đối soát; chống formula injection và lọc quyền"
+      ],
+      "dependsOnIds": [
+        "VIEW-003"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "REPORT-002",
+      "title": "Xuất gói hồ sơ chứng từ và mục lục phiên bản",
+      "primaryModuleId": "M10",
+      "cycleId": "C10",
+      "priority": "P2",
+      "status": "backlog",
+      "description": "Xuất gói hồ sơ chứng từ và mục lục phiên bản; gói xuất chỉ chứa tài liệu được phép đọc, truy vết được người xuất",
+      "acceptanceCriteria": [
+        "Xuất gói hồ sơ chứng từ và mục lục phiên bản; gói xuất chỉ chứa tài liệu được phép đọc, truy vết được người xuất"
+      ],
+      "dependsOnIds": [
+        "DOC-003",
+        "SEC-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "OPS-001",
+      "title": "Triển khai hệ thống và kiểm tra phục hồi trên staging",
+      "primaryModuleId": "M01",
+      "cycleId": "C10",
+      "priority": "P2",
+      "status": "planned",
+      "description": "Docker/deploy, healthcheck, restore và giám sát; kiểm thử phục hồi dữ liệu trên staging",
+      "acceptanceCriteria": [
+        "Docker/deploy, healthcheck, restore và giám sát; kiểm thử phục hồi dữ liệu trên staging"
+      ],
+      "dependsOnIds": [
+        "MVP-001",
+        "REPORT-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 12,
+          "id": 5389748437,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/12"
+        }
+      },
+      "progressNotes": [
+        "Giữ C10: chờ MVP-001 và REPORT-001; chưa triển khai production.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "LINK-001",
+      "title": "Liên kết Work Item với Module và Cycle",
+      "primaryModuleId": "M01",
+      "cycleId": "C01",
+      "priority": "P1",
+      "status": "in_progress",
+      "description": "Mỗi item có module chính và cycle dự kiến; mọi ID tham chiếu tồn tại, dependency không tạo vòng",
+      "acceptanceCriteria": [
+        "Mỗi item có module chính và cycle dự kiến; mọi ID tham chiếu tồn tại, dependency không tạo vòng"
+      ],
+      "dependsOnIds": [],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 13,
+          "id": 5389748671,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/13"
+        }
+      },
+      "progressNotes": [
+        "Kiểm tra 51 item/11 module/10 cycle/80 dependency; mapping tái xuất được bảo toàn.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "LINK-002",
+      "title": "Lưu ánh xạ và quan hệ backlog khi đồng bộ Plane và GitHub",
+      "primaryModuleId": "M01",
+      "cycleId": "C03",
+      "priority": "P1",
+      "status": "in_progress",
+      "description": "Lưu ID từ xa riêng theo hệ thống; chạy lại không nhân đôi; tạo item trước rồi gắn quan hệ; báo rõ quan hệ chưa đồng bộ",
+      "acceptanceCriteria": [
+        "Lưu ID từ xa riêng theo hệ thống; chạy lại không nhân đôi; tạo item trước rồi gắn quan hệ; báo rõ quan hệ chưa đồng bộ"
+      ],
+      "dependsOnIds": [
+        "LINK-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {
+        "github": {
+          "number": 14,
+          "id": 5389748856,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/14"
+        }
+      },
+      "progressNotes": [
+        "Mapping và đồng bộ GitHub đang triển khai; Plane chưa tự động hóa.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ]
+    },
+    {
+      "id": "SEC-005",
+      "title": "Phân quyền xử lý hợp đồng và hồ sơ thanh toán",
+      "primaryModuleId": "M09",
+      "cycleId": "C03",
+      "priority": "P0",
+      "status": "backlog",
+      "description": "Kiểm tra vai trò, phạm vi dự án, người nhận và trạng thái; test API/file/mail không lộ dữ liệu chéo, người lập không tự duyệt",
+      "acceptanceCriteria": [
+        "Kiểm tra vai trò, phạm vi dự án, người nhận và trạng thái; test API/file/mail không lộ dữ liệu chéo, người lập không tự duyệt"
+      ],
+      "dependsOnIds": [
+        "SEC-002",
+        "AUD-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "CONTRACT-001",
+      "title": "Liên kết hợp đồng với công việc và người thực hiện",
+      "primaryModuleId": "M03",
+      "cycleId": "C03",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Một hợp đồng có nhiều dòng công việc; dòng tham chiếu đúng người/phân bổ/dự án, tổng không vượt giá trị hợp đồng",
+      "acceptanceCriteria": [
+        "Một hợp đồng có nhiều dòng công việc; dòng tham chiếu đúng người/phân bổ/dự án, tổng không vượt giá trị hợp đồng"
+      ],
+      "dependsOnIds": [
+        "WORK-002",
+        "SEC-005"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "WORK-004",
+      "title": "Theo dõi thời gian thực hiện và hạn bàn giao công việc",
+      "primaryModuleId": "M03",
+      "cycleId": "C03",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Lưu ngày bắt đầu, kết thúc, bàn giao, người phụ trách; đổi hạn có lý do và revision, hoàn thành có thời điểm thực tế",
+      "acceptanceCriteria": [
+        "Lưu ngày bắt đầu, kết thúc, bàn giao, người phụ trách; đổi hạn có lý do và revision, hoàn thành có thời điểm thực tế"
+      ],
+      "dependsOnIds": [
+        "WORK-002",
+        "AUD-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "PAY-003",
+      "title": "Lập lịch tạm ứng và thanh toán hợp đồng theo đợt",
+      "primaryModuleId": "M05",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Mỗi đợt có hạn, loại, số tiền, người nhận và điều kiện; tách lịch dự kiến với giao dịch thực trả",
+      "acceptanceCriteria": [
+        "Mỗi đợt có hạn, loại, số tiền, người nhận và điều kiện; tách lịch dự kiến với giao dịch thực trả"
+      ],
+      "dependsOnIds": [
+        "CONTRACT-001",
+        "PAY-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "PAY-004",
+      "title": "Đối soát tạm ứng và số tiền còn phải thanh toán",
+      "primaryModuleId": "M05",
+      "cycleId": "C05",
+      "priority": "P0",
+      "status": "backlog",
+      "description": "Liên kết cấn trừ/hoàn ứng; chặn cấn trừ trùng/vượt số dư; thu hồi tạm ứng không tạo lần chi mới",
+      "acceptanceCriteria": [
+        "Liên kết cấn trừ/hoàn ứng; chặn cấn trừ trùng/vượt số dư; thu hồi tạm ứng không tạo lần chi mới"
+      ],
+      "dependsOnIds": [
+        "PAY-003",
+        "PAY-002"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "DOC-001",
+      "title": "Cấu hình checklist hồ sơ theo loại đợt thanh toán",
+      "primaryModuleId": "M10",
+      "cycleId": "C03",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Template có phiên bản, điều kiện bắt buộc, yêu cầu bản mềm/bản ký, người nộp/kiểm tra; snapshot theo đợt",
+      "acceptanceCriteria": [
+        "Template có phiên bản, điều kiện bắt buộc, yêu cầu bản mềm/bản ký, người nộp/kiểm tra; snapshot theo đợt"
+      ],
+      "dependsOnIds": [
+        "CONTRACT-001"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "DOC-002",
+      "title": "Quản lý bản mềm và bản ký hoàn chỉnh của hồ sơ",
+      "primaryModuleId": "M10",
+      "cycleId": "C04",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Lưu hai loại file riêng, phiên bản/hash/người tải lên; kiểm soát download, loại/kích thước file; không ghi đè bản đã duyệt",
+      "acceptanceCriteria": [
+        "Lưu hai loại file riêng, phiên bản/hash/người tải lên; kiểm soát download, loại/kích thước file; không ghi đè bản đã duyệt"
+      ],
+      "dependsOnIds": [
+        "DOC-001",
+        "SEC-005"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "DOC-003",
+      "title": "Kiểm tra bộ hồ sơ trước khi duyệt thanh toán",
+      "primaryModuleId": "M10",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Chỉ rõ thiếu bản nào và người xử lý; chặn duyệt khi hồ sơ bắt buộc chưa hợp lệ; trả bổ sung có lý do và audit",
+      "acceptanceCriteria": [
+        "Chỉ rõ thiếu bản nào và người xử lý; chặn duyệt khi hồ sơ bắt buộc chưa hợp lệ; trả bổ sung có lý do và audit"
+      ],
+      "dependsOnIds": [
+        "DOC-002",
+        "PAY-003"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "NOTICE-001",
+      "title": "Cấu hình người nhận và lịch nhắc công việc, tạm ứng, thanh toán",
+      "primaryModuleId": "M11",
+      "cycleId": "C04",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Chọn người theo vai trò và dự án, mốc trước/đúng/sau hạn, kênh app/email, giờ gửi và múi giờ; xem trước người nhận",
+      "acceptanceCriteria": [
+        "Chọn người theo vai trò và dự án, mốc trước/đúng/sau hạn, kênh app/email, giờ gửi và múi giờ; xem trước người nhận"
+      ],
+      "dependsOnIds": [
+        "WORK-004",
+        "SEC-005"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "NOTICE-002",
+      "title": "Gửi thông báo trong ứng dụng và email nhắc hạn",
+      "primaryModuleId": "M11",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Outbox lưu bền vững, worker retry, khóa chống trùng; kiểm tra quyền lúc gửi, ghi trạng thái gửi/lỗi; test với hộp thư thử",
+      "acceptanceCriteria": [
+        "Outbox lưu bền vững, worker retry, khóa chống trùng; kiểm tra quyền lúc gửi, ghi trạng thái gửi/lỗi; test với hộp thư thử"
+      ],
+      "dependsOnIds": [
+        "NOTICE-001",
+        "PAY-003",
+        "DOC-003"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    },
+    {
+      "id": "NOTICE-003",
+      "title": "Theo dõi quá hạn và dừng nhắc khi công việc đã hoàn tất",
+      "primaryModuleId": "M11",
+      "cycleId": "C05",
+      "priority": "P1",
+      "status": "backlog",
+      "description": "Đổi hạn hủy job cũ; khoản trả một phần vẫn nhắc phần còn lại; dừng khi hoàn tất/hủy; người bị thu quyền không nhận thư đang chờ",
+      "acceptanceCriteria": [
+        "Đổi hạn hủy job cũ; khoản trả một phần vẫn nhắc phần còn lại; dừng khi hoàn tất/hủy; người bị thu quyền không nhận thư đang chờ"
+      ],
+      "dependsOnIds": [
+        "NOTICE-002",
+        "PAY-004"
+      ],
+      "parentId": null,
+      "relatedIds": [],
+      "externalMappings": {}
+    }
+  ],
+  "relations": [
+    {
+      "type": "blocks",
+      "fromId": "SEC-001",
+      "toId": "SEC-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "CORE-001",
+      "toId": "AUD-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "AUD-001",
+      "toId": "CORE-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SEC-002",
+      "toId": "QA-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "CORE-001",
+      "toId": "PEOPLE-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SEC-002",
+      "toId": "PEOPLE-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PEOPLE-001",
+      "toId": "PEOPLE-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PEOPLE-001",
+      "toId": "PEOPLE-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "AUD-001",
+      "toId": "PEOPLE-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PEOPLE-001",
+      "toId": "PEOPLE-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "CORE-003",
+      "toId": "WORK-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SEC-002",
+      "toId": "WORK-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PEOPLE-001",
+      "toId": "WORK-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "WORK-001",
+      "toId": "WORK-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "WORK-001",
+      "toId": "WORK-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "CORE-001",
+      "toId": "RULE-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "RULE-001",
+      "toId": "RULE-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PEOPLE-003",
+      "toId": "RULE-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "RULE-002",
+      "toId": "RULE-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "RULE-003",
+      "toId": "RULE-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "WORK-001",
+      "toId": "RULE-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "RULE-004",
+      "toId": "ALLOC-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "WORK-002",
+      "toId": "ALLOC-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "AUD-001",
+      "toId": "ALLOC-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "ALLOC-001",
+      "toId": "ALLOC-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "ALLOC-001",
+      "toId": "ALLOC-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PEOPLE-004",
+      "toId": "ALLOC-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "ALLOC-002",
+      "toId": "PAY-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-001",
+      "toId": "PAY-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "AUD-001",
+      "toId": "PAY-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "ALLOC-003",
+      "toId": "VIEW-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "VIEW-001",
+      "toId": "VIEW-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-002",
+      "toId": "VIEW-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "QA-001",
+      "toId": "MVP-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "WORK-003",
+      "toId": "MVP-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "VIEW-002",
+      "toId": "MVP-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "LINK-002",
+      "toId": "MVP-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "DOC-003",
+      "toId": "MVP-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "NOTICE-003",
+      "toId": "MVP-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-004",
+      "toId": "MVP-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PEOPLE-002",
+      "toId": "TAX-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "TAX-001",
+      "toId": "TAX-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-002",
+      "toId": "TAX-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "TAX-002",
+      "toId": "TAX-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "TAX-003",
+      "toId": "TAX-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "ALLOC-002",
+      "toId": "SCEN-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SCEN-001",
+      "toId": "SCEN-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "TAX-004",
+      "toId": "SCEN-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "TAX-004",
+      "toId": "VIEW-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "VIEW-002",
+      "toId": "VIEW-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SEC-002",
+      "toId": "SEC-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "TAX-004",
+      "toId": "SEC-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "VIEW-003",
+      "toId": "REPORT-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "DOC-003",
+      "toId": "REPORT-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SEC-002",
+      "toId": "REPORT-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "MVP-001",
+      "toId": "OPS-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "REPORT-001",
+      "toId": "OPS-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "LINK-001",
+      "toId": "LINK-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SEC-002",
+      "toId": "SEC-005"
+    },
+    {
+      "type": "blocks",
+      "fromId": "AUD-001",
+      "toId": "SEC-005"
+    },
+    {
+      "type": "blocks",
+      "fromId": "WORK-002",
+      "toId": "CONTRACT-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SEC-005",
+      "toId": "CONTRACT-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "WORK-002",
+      "toId": "WORK-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "AUD-001",
+      "toId": "WORK-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "CONTRACT-001",
+      "toId": "PAY-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-001",
+      "toId": "PAY-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-003",
+      "toId": "PAY-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-002",
+      "toId": "PAY-004"
+    },
+    {
+      "type": "blocks",
+      "fromId": "CONTRACT-001",
+      "toId": "DOC-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "DOC-001",
+      "toId": "DOC-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SEC-005",
+      "toId": "DOC-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "DOC-002",
+      "toId": "DOC-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-003",
+      "toId": "DOC-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "WORK-004",
+      "toId": "NOTICE-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "SEC-005",
+      "toId": "NOTICE-001"
+    },
+    {
+      "type": "blocks",
+      "fromId": "NOTICE-001",
+      "toId": "NOTICE-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-003",
+      "toId": "NOTICE-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "DOC-003",
+      "toId": "NOTICE-002"
+    },
+    {
+      "type": "blocks",
+      "fromId": "NOTICE-002",
+      "toId": "NOTICE-003"
+    },
+    {
+      "type": "blocks",
+      "fromId": "PAY-004",
+      "toId": "NOTICE-003"
+    }
+  ],
+  "implementationOrder": [
+    "SEC-001",
+    "SEC-002",
+    "SEC-003",
+    "CORE-001",
+    "AUD-001",
+    "CORE-002",
+    "CORE-003",
+    "QA-001",
+    "PEOPLE-001",
+    "PEOPLE-002",
+    "PEOPLE-003",
+    "PEOPLE-004",
+    "WORK-001",
+    "WORK-002",
+    "WORK-003",
+    "RULE-001",
+    "RULE-002",
+    "RULE-003",
+    "RULE-004",
+    "ALLOC-001",
+    "ALLOC-002",
+    "ALLOC-003",
+    "PAY-001",
+    "PAY-002",
+    "VIEW-001",
+    "VIEW-002",
+    "LINK-001",
+    "LINK-002",
+    "SEC-005",
+    "CONTRACT-001",
+    "DOC-001",
+    "DOC-002",
+    "PAY-003",
+    "DOC-003",
+    "WORK-004",
+    "NOTICE-001",
+    "NOTICE-002",
+    "PAY-004",
+    "NOTICE-003",
+    "MVP-001",
+    "TAX-001",
+    "TAX-002",
+    "TAX-003",
+    "TAX-004",
+    "SCEN-001",
+    "SCEN-002",
+    "VIEW-003",
+    "SEC-004",
+    "REPORT-001",
+    "REPORT-002",
+    "OPS-001"
+  ]
+}
