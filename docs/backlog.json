@@ -279,6 +279,10 @@
       "parentId": null,
       "relatedIds": [],
       "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-1",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-1/"
+        },
         "github": {
           "number": 7,
           "id": 5389747313,
@@ -335,6 +339,10 @@
       "parentId": null,
       "relatedIds": [],
       "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-2",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-2/"
+        },
         "github": {
           "number": 9,
           "id": 5389747684,
@@ -361,6 +369,10 @@
       "parentId": null,
       "relatedIds": [],
       "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-3",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-3/"
+        },
         "github": {
           "number": 10,
           "id": 5389747972,
@@ -389,6 +401,10 @@
       "parentId": null,
       "relatedIds": [],
       "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-4",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-4/"
+        },
         "github": {
           "number": 11,
           "id": 5389748124,
@@ -396,7 +412,7 @@
         }
       },
       "progressNotes": [
-        "Typecheck, lint, build, 5 unit và 6 case integration local đạt; 5 test backlog đạt. Chờ CI từ xa.",
+        "Typecheck, lint, build, 5 unit và 7 case integration local đạt; 5 test backlog đạt. Chờ CI từ xa.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
       ]
     },
@@ -988,6 +1004,10 @@
       "parentId": null,
       "relatedIds": [],
       "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-5",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-5/"
+        },
         "github": {
           "number": 13,
           "id": 5389748671,
