@@ -121,7 +121,7 @@
     "QA-001": {
       "status": "in_progress",
       "progressNotes": [
-        "Typecheck, lint, build, 5 unit và 7 case integration local đạt; 5 test backlog đạt. Chờ CI từ xa.",
+        "Typecheck, lint, build, 5 unit, 7 integration và 5 backlog test local đạt; GitHub Actions verify đạt trên PR #15.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
       ],
       "externalMappings": {
