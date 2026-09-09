@@ -35,7 +35,10 @@ def managed(existing, text):
 def main():
     backlog = json.loads((ROOT / "docs/backlog.json").read_text())
     state = json.loads(STATE.read_text())
-    selected = [item for item in backlog["workItems"] if item["primaryModuleId"] == "M01" or item["id"] in {"SEC-001", "SEC-002", "SEC-003", "AUD-001"}]
+    # The first run covered Module 1.  Keep the same idempotent mapping and
+    # extend it to every imported Plane Work Idea so neither tracker is a
+    # partial source of truth.
+    selected = backlog["workItems"]
     if "--apply" not in sys.argv:
         for item in selected:
             print(item["id"], item["primaryModuleId"], item["cycleId"], item["title"])
@@ -99,7 +102,8 @@ def main():
         body += "\n\n### Các bước thực hiện\n\n" + "\n".join(f"{index}. {step}" for index, step in enumerate(item["executionSteps"], 1))
         notes = item.get("progressNotes", [])
         body += "\n\n### Thay đổi, lỗi và cách xử lý\n\n" + ("\n".join(f"- {note}" for note in notes) if notes else "- Chưa bắt đầu; chưa có thay đổi hoặc lỗi để ghi nhận.")
-        mapping = upsert(item["id"], item["title"], body, {"labels": [item["primaryModuleId"], item["priority"]],
+        display_title = f"{item['executionCode']} — {item['title']}"
+        mapping = upsert(item["id"], display_title, body, {"labels": [item["primaryModuleId"], item["priority"]],
                          "milestone": state["cycles"][item["cycleId"]]["github"]["number"]})
         state["workItems"].setdefault(item["id"], {}).setdefault("externalMappings", {})["github"] = mapping
         save()
