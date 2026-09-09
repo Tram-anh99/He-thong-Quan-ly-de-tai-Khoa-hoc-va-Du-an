@@ -29,6 +29,10 @@
         "number": 2,
         "id": 5389745953,
         "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/2"
+      },
+      "plane": {
+        "id": "6e18bdec-29b7-4911-8f92-5f6ebdb9f07c",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/6e18bdec-29b7-4911-8f92-5f6ebdb9f07c"
       }
     },
     "M10": {
@@ -36,6 +40,58 @@
         "number": 3,
         "id": 5389746315,
         "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/3"
+      },
+      "plane": {
+        "id": "2d1f6499-cdaa-4873-8187-4a031480216c",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/2d1f6499-cdaa-4873-8187-4a031480216c"
+      }
+    },
+    "M02": {
+      "plane": {
+        "id": "6a93aef2-68ba-45ed-b33c-e4f8998405ae",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/6a93aef2-68ba-45ed-b33c-e4f8998405ae"
+      }
+    },
+    "M03": {
+      "plane": {
+        "id": "2558aa85-36a7-4ab3-8911-900b74f2cf01",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/2558aa85-36a7-4ab3-8911-900b74f2cf01"
+      }
+    },
+    "M04": {
+      "plane": {
+        "id": "53b74c5b-191b-4e77-91bb-3625f94a1177",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/53b74c5b-191b-4e77-91bb-3625f94a1177"
+      }
+    },
+    "M05": {
+      "plane": {
+        "id": "8ff7af1c-4edb-4b4f-82d7-4d270b7093f6",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/8ff7af1c-4edb-4b4f-82d7-4d270b7093f6"
+      }
+    },
+    "M06": {
+      "plane": {
+        "id": "8347c362-0a1a-4664-8700-6d93fc0df4ff",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/8347c362-0a1a-4664-8700-6d93fc0df4ff"
+      }
+    },
+    "M07": {
+      "plane": {
+        "id": "28fd576e-f386-427b-970e-c7346f43dd73",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/28fd576e-f386-427b-970e-c7346f43dd73"
+      }
+    },
+    "M08": {
+      "plane": {
+        "id": "5b77e567-4874-49ce-915e-776f15f99856",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/5b77e567-4874-49ce-915e-776f15f99856"
+      }
+    },
+    "M11": {
+      "plane": {
+        "id": "7cb1da20-9e92-4739-a667-4bd4f07e74c1",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/7cb1da20-9e92-4739-a667-4bd4f07e74c1"
       }
     }
   },
@@ -54,12 +110,62 @@
       "github": {
         "number": 2,
         "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/2"
+      },
+      "plane": {
+        "id": "e4ccce88-ac5e-43c2-9b03-62caaf74d6a1",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/e4ccce88-ac5e-43c2-9b03-62caaf74d6a1"
       }
     },
     "C10": {
       "github": {
         "number": 3,
         "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/3"
+      },
+      "plane": {
+        "id": "2de93db2-79c4-4b00-93e5-e5b7234501b9",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/2de93db2-79c4-4b00-93e5-e5b7234501b9"
+      }
+    },
+    "C02": {
+      "plane": {
+        "id": "217498e3-110f-40d0-a6e6-5672711edbb7",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/217498e3-110f-40d0-a6e6-5672711edbb7"
+      }
+    },
+    "C04": {
+      "plane": {
+        "id": "bd80e8cb-04cd-474f-ba72-ba4f8b5a3dfa",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/bd80e8cb-04cd-474f-ba72-ba4f8b5a3dfa"
+      }
+    },
+    "C05": {
+      "plane": {
+        "id": "06469110-90b9-4991-b790-c824139e741a",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/06469110-90b9-4991-b790-c824139e741a"
+      }
+    },
+    "C06": {
+      "plane": {
+        "id": "e35e76df-fc05-4ee9-b0c1-6b40cf357d59",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/e35e76df-fc05-4ee9-b0c1-6b40cf357d59"
+      }
+    },
+    "C07": {
+      "plane": {
+        "id": "d69c8015-daa3-441f-a0f2-b38dda7d0ae6",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/d69c8015-daa3-441f-a0f2-b38dda7d0ae6"
+      }
+    },
+    "C08": {
+      "plane": {
+        "id": "97b50364-19b8-40ea-ba71-1fa5f385972a",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/97b50364-19b8-40ea-ba71-1fa5f385972a"
+      }
+    },
+    "C09": {
+      "plane": {
+        "id": "9fafe7d9-cd99-496d-adfd-60b4dc5575f7",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/9fafe7d9-cd99-496d-adfd-60b4dc5575f7"
       }
     }
   },
@@ -165,6 +271,10 @@
           "number": 14,
           "id": 5389748856,
           "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/14"
+        },
+        "plane": {
+          "id": "QUNLDN-40",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-40/"
         }
       }
     },
@@ -179,6 +289,10 @@
           "number": 12,
           "id": 5389748437,
           "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/12"
+        },
+        "plane": {
+          "id": "QUNLDN-39",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-39/"
         }
       }
     },
@@ -193,6 +307,10 @@
           "number": 4,
           "id": 5389746678,
           "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/4"
+        },
+        "plane": {
+          "id": "QUNLDN-6",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-6/"
         }
       }
     },
@@ -207,6 +325,10 @@
           "number": 5,
           "id": 5389746897,
           "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/5"
+        },
+        "plane": {
+          "id": "QUNLDN-7",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-7/"
         }
       }
     },
@@ -221,6 +343,10 @@
           "number": 6,
           "id": 5389747095,
           "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/6"
+        },
+        "plane": {
+          "id": "QUNLDN-8",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-8/"
         }
       }
     },
@@ -235,8 +361,342 @@
           "number": 8,
           "id": 5389747493,
           "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/8"
+        },
+        "plane": {
+          "id": "QUNLDN-9",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-9/"
+        }
+      }
+    },
+    "PEOPLE-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-10",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-10/"
+        }
+      }
+    },
+    "PEOPLE-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-11",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-11/"
+        }
+      }
+    },
+    "PEOPLE-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-12",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-12/"
+        }
+      }
+    },
+    "PEOPLE-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-13",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-13/"
+        }
+      }
+    },
+    "WORK-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-14",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-14/"
+        }
+      }
+    },
+    "WORK-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-15",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-15/"
+        }
+      }
+    },
+    "WORK-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-16",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-16/"
+        }
+      }
+    },
+    "RULE-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-17",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-17/"
+        }
+      }
+    },
+    "RULE-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-18",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-18/"
+        }
+      }
+    },
+    "RULE-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-19",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-19/"
+        }
+      }
+    },
+    "RULE-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-20",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-20/"
+        }
+      }
+    },
+    "ALLOC-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-21",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-21/"
+        }
+      }
+    },
+    "ALLOC-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-22",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-22/"
+        }
+      }
+    },
+    "ALLOC-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-23",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-23/"
+        }
+      }
+    },
+    "PAY-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-24",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-24/"
+        }
+      }
+    },
+    "PAY-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-25",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-25/"
+        }
+      }
+    },
+    "VIEW-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-26",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-26/"
+        }
+      }
+    },
+    "VIEW-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-27",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-27/"
+        }
+      }
+    },
+    "MVP-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-28",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-28/"
+        }
+      }
+    },
+    "TAX-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-29",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-29/"
+        }
+      }
+    },
+    "TAX-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-30",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-30/"
+        }
+      }
+    },
+    "TAX-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-31",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-31/"
+        }
+      }
+    },
+    "TAX-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-32",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-32/"
+        }
+      }
+    },
+    "SCEN-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-33",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-33/"
+        }
+      }
+    },
+    "SCEN-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-34",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-34/"
+        }
+      }
+    },
+    "VIEW-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-35",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-35/"
+        }
+      }
+    },
+    "SEC-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-36",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-36/"
+        }
+      }
+    },
+    "REPORT-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-37",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-37/"
+        }
+      }
+    },
+    "REPORT-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-38",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-38/"
+        }
+      }
+    },
+    "SEC-005": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-41",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-41/"
+        }
+      }
+    },
+    "CONTRACT-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-42",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-42/"
+        }
+      }
+    },
+    "WORK-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-43",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-43/"
+        }
+      }
+    },
+    "PAY-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-44",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-44/"
+        }
+      }
+    },
+    "PAY-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-45",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-45/"
+        }
+      }
+    },
+    "DOC-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-46",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-46/"
+        }
+      }
+    },
+    "DOC-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-47",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-47/"
+        }
+      }
+    },
+    "DOC-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-48",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-48/"
+        }
+      }
+    },
+    "NOTICE-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-49",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-49/"
+        }
+      }
+    },
+    "NOTICE-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-50",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-50/"
+        }
+      }
+    },
+    "NOTICE-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-51",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-51/"
         }
       }
     }
+  },
+  "planeImport": {
+    "projectId": "cb01f067-7279-44a7-8058-ea1a1be63483",
+    "workspace": "stac",
+    "completedAt": "2026-09-09",
+    "moduleCount": 11,
+    "cycleCount": 10,
+    "workItemCount": 51,
+    "relationCount": 80,
+    "notes": "Mỗi Work Item được gắn Module và Cycle; các quan hệ phụ thuộc/liên quan được ghi trong mô tả Work Item theo docs/backlog.json."
   }
 }
