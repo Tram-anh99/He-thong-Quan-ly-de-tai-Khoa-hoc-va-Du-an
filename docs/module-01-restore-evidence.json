@@ -1,52 +1,52 @@
 {
   "source": "research_m01_test",
-  "restoredDatabase": "research_m01_test_restore_1788887333",
+  "restoredDatabase": "research_m01_test_restore_1788933980",
   "matched": true,
   "dataKind": "synthetic-test-fixtures-not-production",
   "tables": {
     "users": {
-      "count": 10,
-      "digest": "c64ea932757277a311d01584c5adf8a9"
+      "count": 15,
+      "digest": "6846656cbbd69fc3bb8991c69f5d37e4"
     },
     "projects": {
-      "count": 4,
-      "digest": "aef469c01d0569c68913b6cbcc132fa5",
-      "sum": "1999999999999999999.98"
+      "count": 6,
+      "digest": "3e8d91a47fcbc0acc323c9331d9a81b9",
+      "sum": "2999999999999999999.97"
     },
     "project_documents": {
-      "count": 1,
-      "digest": "4aacad13902325954d4f286ed0162388"
+      "count": 2,
+      "digest": "b41433628b62830fe7000f43ae07452d"
     },
     "project_members": {
-      "count": 6,
-      "digest": "081edec4a61deac1df78973a465b6073"
+      "count": 9,
+      "digest": "4c17a2f09ed87a777f211c757c38ace0"
     },
     "budget_items": {
-      "count": 1,
-      "digest": "46e23159157dbd3a9bde2d7e7f78c68b",
-      "sum": "50.01"
+      "count": 2,
+      "digest": "1cfea774649c9642a8ce236c33bd7716",
+      "sum": "100.02"
     },
     "contracts": {
-      "count": 2,
-      "digest": "11186368fa104a05042e40b71b59884e",
-      "sum": "246.90"
+      "count": 3,
+      "digest": "a2ab6d4aa64205a29752882a76e86748",
+      "sum": "370.35"
     },
     "products": {
-      "count": 1,
-      "digest": "f2e97d1a705d26af03dd0753bc848586"
+      "count": 2,
+      "digest": "0bb051caa51a08c54b900de761ec171e"
     },
     "payment_records": {
-      "count": 2,
-      "digest": "d3e084688e76d1f760673cddea6e670e",
-      "sum": "24.68"
+      "count": 3,
+      "digest": "302974fdcd296b2cac2675b66f577316",
+      "sum": "37.02"
     },
     "document_templates": {
-      "count": 1,
-      "digest": "22c02e4d55119ab2ef7b2cd16821a27f"
+      "count": 2,
+      "digest": "b26a782cb6596eec05b4e8f9f5646af4"
     },
     "audit_logs": {
-      "count": 6,
-      "digest": "1d5773dbe732ae2667c16689a6f8e63e"
+      "count": 9,
+      "digest": "67fe30c88c7bb94eef8fb8aa0c65aef1"
     }
   }
 }
