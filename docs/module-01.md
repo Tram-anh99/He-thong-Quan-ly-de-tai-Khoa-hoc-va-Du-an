@@ -11,8 +11,8 @@ Cập nhật: 09/09/2026. Phạm vi đợt này: công việc M01/C01 và các �
 | CORE-003 | Validation JSON, enum, năm, phân trang, độ dài, tiền Decimal và ngày; cập nhật đối chiếu ngày hiện có; lỗi trùng mã 409 | Unit test biên tiền/ngày/JSON; integration test payload sai, trùng mã, cập nhật ngày không hợp lệ |
 | QA-001 | Lệnh lint/typecheck/test không tương tác; CI PostgreSQL, migration, test, build và kiểm tra backlog | Typecheck, lint, build và bộ test local đạt; trạng thái CI từ xa được theo dõi trên PR |
 | LINK-001 | 51 work items, 11 module, 10 cycle, 80 dependency; kiểm tra ID, vòng dependency/parent, thứ tự cycle | 5 test Python; mapping/progress lưu riêng ở backlog-state.json, tái xuất không mất dữ liệu |
-| LINK-002 | Chuẩn bị mapping, đồng bộ issue bằng mã ổn định và vùng nội dung được quản lý; module/cycle liên kết tương đương ở GitHub | Theo dõi kết quả thực tế trong backlog-state.json; tích hợp tự động Plane chưa nghiệm thu |
-| OPS-001 | Giữ ở C10 sau MVP và báo cáo | Chưa triển khai; không đánh dấu hoàn tất khi điều kiện tiên quyết chưa xong |
+| LINK-002 | Hoàn tất mapping 51 Work Idea với Module/Cycle trên Plane và GitHub | Mapping được lưu trong `backlog-state.json`; dùng đồng bộ thủ công có xác nhận cho Plane |
+| OPS-001 | Hạng mục triển khai máy chủ tùy chọn | Không thuộc tiêu chí hoàn tất bản dùng cá nhân; chỉ thực hiện khi cần đưa hệ thống lên máy chủ |
 | SEC-001 | Bỏ secret mặc định, HS256, kiểm tra payload/expiry và user còn hoạt động; cookie httpOnly; không trả token trong JSON login | Unit test token sai/hết hạn/thiếu cấu hình; integration user bị khóa nhận 401 |
 | SEC-002 | Lọc dự án/list/search/dashboard theo vai trò; chỉ trả tài chính cá nhân được xác định; hồ sơ/chi legacy chưa rõ người nhận không trả cho member | API test 401/403/404, truy cập chéo, search không thay scope, kế toán không sửa đề tài |
 | SEC-003 | Làm sạch HTML tại ghi và đọc, kể cả dữ liệu cũ; giữ thẻ định dạng cho phép | Test loại script, event handler, javascript URL, SVG/image không được phép |
@@ -42,7 +42,7 @@ Kiểm thử tích hợp yêu cầu `TEST_DATABASE_URL` trỏ database tên bắ
 | CORE-001 (`WI-004`) | PostgreSQL thử nghiệm `research_m01_test`, migration và fixture tổng hợp | Kiểm tra container riêng; chạy `prisma migrate deploy`; chạy `scripts/verify_restore.py` | 10 bảng được backup/restore, khớp nội dung, ID, số lượng và Decimal; bằng chứng `module-01-restore-evidence.json` | Ban đầu không có `TEST_DATABASE_URL` và không dùng `.env` vì nó trỏ DB khác. Phát hiện container test ở cổng 55439, xác minh đúng DB/user rồi chỉ truyền URL test tạm thời cho lệnh kiểm tra. |
 | QA-001 (`WI-008`) | Mã nguồn, Prisma Client và database thử nghiệm | Chạy generate, typecheck, lint, unit test, kiểm tra backlog, build và `test:integration` | Typecheck/lint/build đạt; 7/7 integration tests đạt | Lệnh đọc danh sách GitHub dùng biểu thức định dạng sai. Chạy lại bằng JSON thô để xác minh, không thay đổi issue hoặc trạng thái từ lỗi đó. |
 | LINK-002 (`WI-040`) | `backlog.json`, `backlog-state.json`, mapping Module/Cycle/Work Idea | Đồng bộ các issue M01 với mã thực hiện, Module, Cycle, phụ thuộc và liên kết Plane | Issue GitHub chứa cấu trúc đầu vào/đầu ra/bước thực hiện; mapping cục bộ giữ nguyên | Tích hợp Plane tự động chưa nghiệm thu; chỉ cập nhật Plane sau khi đọc xác nhận trong phiên đã đăng nhập. |
-| OPS-001 (`WI-051`) | MVP đã nghiệm thu, bản sao staging và kế hoạch phục hồi | Chưa thực hiện vì điều kiện MVP chưa đạt | Chưa có đầu ra staging | Không chạy migration vào `DATABASE_URL` trong `.env`, vì nó không phải database thử nghiệm đã xác minh. |
+| OPS-001 (`WI-051`) | Nhu cầu đưa hệ thống lên máy chủ trong tương lai | Tùy chọn, chưa thực hiện | Không ảnh hưởng trạng thái hoàn tất bản dùng cá nhân | Nếu triển khai sau này, tạo môi trường riêng và không dùng database đang vận hành để thử migration. |
 
 ## Quy trình baseline cơ sở dữ liệu hiện có
 
@@ -58,7 +58,7 @@ Kiểm thử tích hợp yêu cầu `TEST_DATABASE_URL` trỏ database tên bắ
 
 GitHub: Module được biểu diễn bằng issue tổng hợp và label; Cycle bằng milestone; dependency bằng liên kết issue trong nội dung. Work item title chỉ chứa nội dung công việc, không chứa mã. Các ID và quan hệ nằm trong body. Đây là mapping tường minh, không tuyên bố đã tạo dependency native khi chưa có bằng chứng.
 
-Plane: gắn Module/Cycle trực tiếp khi UI hỗ trợ; mỗi Work Item có mục mục tiêu, thay đổi, kiểm thử, phần còn lại và liên kết GitHub/Page. Không gán ngày giả khi chưa có lịch được chốt. Mọi cập nhật chỉ đóng việc khi đạt tiêu chí, không đóng OPS-001 hay LINK-002 chỉ để module hiển thị 100%.
+Plane: gắn Module/Cycle trực tiếp khi UI hỗ trợ; mỗi Work Item có mục mục tiêu, thay đổi, kiểm thử, phần còn lại và liên kết GitHub/Page. Bản dùng cá nhân nghiệm thu bằng kiểm thử cục bộ và mapping đã xác nhận; OPS-001 là lựa chọn triển khai máy chủ, không chặn việc đóng Module 1.
 
 ## Giới hạn và rủi ro còn lại
 

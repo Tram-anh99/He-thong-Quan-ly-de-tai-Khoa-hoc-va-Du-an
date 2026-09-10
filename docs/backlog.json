@@ -349,7 +349,7 @@
       "primaryModuleId": "M09",
       "cycleId": "C01",
       "priority": "P0",
-      "status": "in_progress",
+      "status": "done",
       "description": "Bỏ secret mặc định, validate token, từ chối user đã khóa; token sai/hết hạn nhận 401",
       "acceptanceCriteria": [
         "Bỏ secret mặc định, validate token, từ chối user đã khóa; token sai/hết hạn nhận 401"
@@ -393,7 +393,7 @@
       "primaryModuleId": "M09",
       "cycleId": "C01",
       "priority": "P0",
-      "status": "in_progress",
+      "status": "done",
       "description": "Lọc project/list/detail/dashboard theo vai trò; test truy cập chéo và trường riêng tư",
       "acceptanceCriteria": [
         "Lọc project/list/detail/dashboard theo vai trò; test truy cập chéo và trường riêng tư"
@@ -440,7 +440,7 @@
       "primaryModuleId": "M09",
       "cycleId": "C01",
       "priority": "P0",
-      "status": "in_progress",
+      "status": "done",
       "description": "Làm sạch fullText; script và event handler không thực thi",
       "acceptanceCriteria": [
         "Làm sạch fullText; script và event handler không thực thi"
@@ -484,7 +484,7 @@
       "primaryModuleId": "M01",
       "cycleId": "C01",
       "priority": "P0",
-      "status": "in_progress",
+      "status": "done",
       "description": "Baseline migration, backup/restore thử trên bản sao; giữ số bản ghi và tổng tiền",
       "acceptanceCriteria": [
         "Baseline migration, backup/restore thử trên bản sao; giữ số bản ghi và tổng tiền"
@@ -528,7 +528,7 @@
       "primaryModuleId": "M10",
       "cycleId": "C01",
       "priority": "P0",
-      "status": "in_progress",
+      "status": "done",
       "description": "Mutation và audit cùng transaction; lỗi audit rollback mutation",
       "acceptanceCriteria": [
         "Mutation và audit cùng transaction; lỗi audit rollback mutation"
@@ -575,7 +575,7 @@
       "primaryModuleId": "M01",
       "cycleId": "C01",
       "priority": "P0",
-      "status": "in_progress",
+      "status": "done",
       "description": "Lưu trữ đề tài có phát sinh thay xóa cascade; chứng từ vẫn truy vấn được",
       "acceptanceCriteria": [
         "Lưu trữ đề tài có phát sinh thay xóa cascade; chứng từ vẫn truy vấn được"
@@ -622,7 +622,7 @@
       "primaryModuleId": "M01",
       "cycleId": "C01",
       "priority": "P1",
-      "status": "in_progress",
+      "status": "done",
       "description": "Validate payload/filter/pagination, tiền Decimal; dữ liệu sai trả 4xx",
       "acceptanceCriteria": [
         "Validate payload/filter/pagination, tiền Decimal; dữ liệu sai trả 4xx"
@@ -666,7 +666,7 @@
       "primaryModuleId": "M01",
       "cycleId": "C01",
       "priority": "P1",
-      "status": "in_progress",
+      "status": "done",
       "description": "Lệnh test/typecheck/lint không tương tác và CI; có test phân quyền thất bại",
       "acceptanceCriteria": [
         "Lệnh test/typecheck/lint không tương tác và CI; có test phân quyền thất bại"
@@ -2030,7 +2030,7 @@
       "primaryModuleId": "M01",
       "cycleId": "C01",
       "priority": "P1",
-      "status": "in_progress",
+      "status": "done",
       "description": "Mỗi item có module chính và cycle dự kiến; mọi ID tham chiếu tồn tại, dependency không tạo vòng",
       "acceptanceCriteria": [
         "Mỗi item có module chính và cycle dự kiến; mọi ID tham chiếu tồn tại, dependency không tạo vòng"
@@ -2074,7 +2074,7 @@
       "primaryModuleId": "M01",
       "cycleId": "C03",
       "priority": "P1",
-      "status": "in_progress",
+      "status": "done",
       "description": "Lưu ID từ xa riêng theo hệ thống; chạy lại không nhân đôi; tạo item trước rồi gắn quan hệ; báo rõ quan hệ chưa đồng bộ",
       "acceptanceCriteria": [
         "Lưu ID từ xa riêng theo hệ thống; chạy lại không nhân đôi; tạo item trước rồi gắn quan hệ; báo rõ quan hệ chưa đồng bộ"

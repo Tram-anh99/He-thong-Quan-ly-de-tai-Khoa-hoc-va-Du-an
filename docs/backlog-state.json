@@ -239,7 +239,7 @@
   },
   "workItems": {
     "CORE-001": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "Baseline migration đạt; restore fixture đối soát 10 bảng. Chưa đối soát bản sao dữ liệu production.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
@@ -257,7 +257,7 @@
       }
     },
     "CORE-002": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "Đã thay xóa bằng lưu trữ; kiểm thử bảo toàn hợp đồng/thanh toán và rollback đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
@@ -275,7 +275,7 @@
       }
     },
     "CORE-003": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "Validation tiền Decimal/ngày/JSON/phân trang; kiểm thử biên và API đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
@@ -293,7 +293,7 @@
       }
     },
     "QA-001": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "Typecheck, lint, build, 5 unit, 7 integration và 5 backlog test local đạt; GitHub Actions verify đạt trên PR #15.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
@@ -311,7 +311,7 @@
       }
     },
     "LINK-001": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "Kiểm tra 51 item/11 module/10 cycle/80 dependency; mapping tái xuất được bảo toàn.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
@@ -329,7 +329,7 @@
       }
     },
     "LINK-002": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "Mapping và đồng bộ GitHub đang triển khai; Plane chưa tự động hóa.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
@@ -365,7 +365,7 @@
       }
     },
     "SEC-001": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "JWT fail closed, HS256, payload/expiry và tài khoản hoạt động; kiểm thử đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
@@ -383,7 +383,7 @@
       }
     },
     "SEC-002": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "Giới hạn dữ liệu theo vai trò và người dùng; kiểm thử truy cập chéo đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
@@ -401,7 +401,7 @@
       }
     },
     "SEC-003": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "Làm sạch HTML ở đọc/ghi; kiểm thử XSS đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
@@ -419,7 +419,7 @@
       }
     },
     "AUD-001": {
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
         "Transaction audit cho create/update/archive; thử lỗi audit rollback đạt.",
         "Chi tiết: docs/module-01.md. Chưa triển khai production."
