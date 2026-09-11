@@ -5,6 +5,8 @@ is required when switching the frontend proxy to this backend.
 """
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
+from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from uuid import uuid4
 
 import bleach
@@ -18,7 +20,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column, rela
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    model_config = SettingsConfigDict(env_file=Path(__file__).resolve().parents[2] / ".env", extra="ignore")
     database_url: str = Field(alias="DATABASE_URL")
     jwt_secret: str = Field(alias="JWT_SECRET")
     jwt_expiry_hours: int = 24
@@ -26,7 +28,9 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
-engine = create_engine(settings.database_url, pool_pre_ping=True)
+parsed_url = urlsplit(settings.database_url.replace("postgresql://", "postgresql+psycopg://", 1))
+database_url = urlunsplit((parsed_url.scheme, parsed_url.netloc, parsed_url.path, urlencode([(key, value) for key, value in parse_qsl(parsed_url.query) if key != "schema"]), parsed_url.fragment))
+engine = create_engine(database_url, pool_pre_ping=True)
 SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
 passwords = CryptContext(schemes=["bcrypt"])
 
