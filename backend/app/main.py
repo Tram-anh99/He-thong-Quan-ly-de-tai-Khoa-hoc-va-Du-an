@@ -11,7 +11,7 @@ from uuid import uuid4
 
 import bleach
 import jwt
-from fastapi import Cookie, Depends, FastAPI, HTTPException, Query, Response
+from fastapi import Depends, FastAPI, HTTPException, Query, Request, Response
 from passlib.context import CryptContext
 from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -90,7 +90,10 @@ def project_payload(p: Project):
     return {"id": p.id, "code": p.code, "title": p.title, "summary": p.summary, "fullText": bleach.clean(p.full_text or "", tags=["p", "br", "strong", "em", "ul", "ol", "li"], strip=True), "ownerId": p.owner_id, "owner": user_payload(p.owner), "totalBudget": str(p.total_budget), "fundingSource": p.funding_source, "startDate": p.start_date, "endDate": p.end_date, "year": p.year, "status": p.status, "createdAt": p.created_at, "updatedAt": p.updated_at}
 
 
-def current_user(token: str | None = Cookie(None), db: Session = Depends(db_session)):
+def current_user(request: Request, db: Session = Depends(db_session)):
+    # The browser session is issued by the Next.js boundary.  Accept the old
+    # `token` name temporarily so a direct Python API client remains usable.
+    token = request.cookies.get("auth-token") or request.cookies.get("token")
     if not token: raise HTTPException(401, "Chưa đăng nhập")
     try: payload = jwt.decode(token, settings.jwt_secret, algorithms=["HS256"]); user = db.get(User, payload["userId"])
     except (jwt.PyJWTError, KeyError): raise HTTPException(401, "Phiên đăng nhập không hợp lệ")
