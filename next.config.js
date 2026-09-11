@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+     async rewrites() {
+          const backend = process.env.PYTHON_API_URL;
+          return backend ? { beforeFiles: [{ source: "/api/:path*", destination: `${backend}/api/:path*` }] } : [];
+     },
      experimental: {
           // If you use appDir features that require it, keep it enabled
      },
