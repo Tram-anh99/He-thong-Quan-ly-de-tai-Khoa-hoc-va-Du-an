@@ -123,13 +123,13 @@ def login(data: Login, response: Response, db: Session = Depends(db_session)):
     if not user or not user.is_active or not passwords.verify(data.password, user.password): raise HTTPException(401, "Email hoặc mật khẩu không đúng")
     token = jwt.encode({"userId": user.id, "role": user.role, "exp": datetime.now(timezone.utc) + timedelta(hours=settings.jwt_expiry_hours)}, settings.jwt_secret, algorithm="HS256")
     response.set_cookie("token", token, httponly=True, secure=settings.cookie_secure, samesite="lax")
-    return {"data": {"user": user_payload(user)}}
+    return {"success": True, "data": {"user": user_payload(user)}}
 
 @app.post("/api/auth/logout")
-def logout(response: Response): response.delete_cookie("token"); return {"data": {"message": "Đã đăng xuất"}}
+def logout(response: Response): response.delete_cookie("token"); return {"success": True, "data": {"message": "Đã đăng xuất"}}
 
 @app.get("/api/auth/me")
-def me(user: User = Depends(current_user)): return {"data": user_payload(user)}
+def me(user: User = Depends(current_user)): return {"success": True, "data": user_payload(user)}
 
 @app.get("/api/projects")
 def projects(page: int = Query(1, ge=1), pageSize: int = Query(20, ge=1, le=100), year: int | None = None, status: str | None = None, search: str | None = None, db: Session = Depends(db_session), user: User = Depends(current_user)):
@@ -139,7 +139,7 @@ def projects(page: int = Query(1, ge=1), pageSize: int = Query(20, ge=1, le=100)
     if search: q = q.where(or_(Project.title.ilike(f"%{search[:500]}%"), Project.code.ilike(f"%{search[:500]}%")))
     total = db.scalar(select(func.count()).select_from(q.subquery())) or 0
     rows = db.scalars(q.order_by(desc(Project.created_at)).offset((page - 1) * pageSize).limit(pageSize)).all()
-    return {"data": [project_payload(x) for x in rows], "meta": {"total": total, "page": page, "pageSize": pageSize}}
+    return {"success": True, "data": [project_payload(x) for x in rows], "meta": {"total": total, "page": page, "pageSize": pageSize}}
 
 @app.post("/api/projects", status_code=201)
 def create_project(data: ProjectInput, db: Session = Depends(db_session), user: User = Depends(current_user)):
@@ -148,13 +148,13 @@ def create_project(data: ProjectInput, db: Session = Depends(db_session), user: 
     if data.startDate and data.endDate and data.startDate > data.endDate: raise HTTPException(400, "Ngày bắt đầu phải trước ngày kết thúc")
     now = datetime.now(timezone.utc); p = Project(id=str(uuid4()), owner_id=user.id, code=data.code, title=data.title, summary=data.summary, full_text=bleach.clean(data.fullText or "", strip=True), total_budget=data.totalBudget or 0, funding_source=data.fundingSource, start_date=data.startDate, end_date=data.endDate, year=data.year, status=data.status or "DRAFT", created_at=now, updated_at=now)
     db.add(p); db.add(ProjectMember(id=str(uuid4()), project_id=p.id, user_id=user.id)); db.commit(); db.refresh(p)
-    return {"data": project_payload(p)}
+    return {"success": True, "data": project_payload(p)}
 
 @app.get("/api/projects/{project_id}")
 def project(project_id: str, db: Session = Depends(db_session), user: User = Depends(current_user)):
     p = db.scalar(select(Project).where(Project.id == project_id, scope(user)))
     if not p: raise HTTPException(404, "Không tìm thấy dự án")
-    return {"data": project_payload(p)}
+    return {"success": True, "data": project_payload(p)}
 
 @app.delete("/api/projects/{project_id}")
 def archive(project_id: str, db: Session = Depends(db_session), user: User = Depends(current_user)):
@@ -162,4 +162,11 @@ def archive(project_id: str, db: Session = Depends(db_session), user: User = Dep
     p = db.get(Project, project_id)
     if not p: raise HTTPException(404, "Không tìm thấy dự án")
     p.status = "ARCHIVED"; p.updated_at = datetime.now(timezone.utc); db.commit()
-    return {"data": {"message": "Đã lưu trữ dự án"}}
+    return {"success": True, "data": {"message": "Đã lưu trữ dự án"}}
+
+@app.get("/api/dashboard")
+def dashboard(db: Session = Depends(db_session), user: User = Depends(current_user)):
+    projects = db.scalars(select(Project).where(scope(user)).order_by(desc(Project.created_at))).all()
+    users = db.scalars(select(User).where(User.is_active == True)).all() if user.role in {"ADMIN", "MANAGER", "ACCOUNTANT"} else [user]
+    data = {"stats": {"totalProjects": len(projects), "ongoingProjects": sum(p.status == "ONGOING" for p in projects), "completedProjects": sum(p.status == "COMPLETED" for p in projects), "totalMembers": len(users), "totalBudget": None if user.role == "RESEARCHER" else str(sum((p.total_budget for p in projects), Decimal(0)))}, "recentProjects": [project_payload(p) for p in projects[:5]], "lists": {"allProjects": [project_payload(p) for p in projects], "ongoingProjects": [project_payload(p) for p in projects if p.status == "ONGOING"], "completedProjects": [project_payload(p) for p in projects if p.status == "COMPLETED"], "users": [user_payload(u) for u in users]}}
+    return {"success": True, "data": data}
