@@ -1,0 +1,976 @@
+{
+  "syncStatus": "partial",
+  "pages": {
+    "module-01": {
+      "plane": {
+        "id": "5b2f04a7-44a8-41ca-8d33-973cf6a2804f",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/pages/5b2f04a7-44a8-41ca-8d33-973cf6a2804f/"
+      },
+      "github": {
+        "pullRequest": 15,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/pull/15"
+      }
+    }
+  },
+  "modules": {
+    "M01": {
+      "plane": {
+        "id": "468d1ee0-8394-4404-94c2-4f602fa02091",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/468d1ee0-8394-4404-94c2-4f602fa02091"
+      },
+      "github": {
+        "number": 1,
+        "id": 5389745714,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/1"
+      }
+    },
+    "M09": {
+      "github": {
+        "number": 2,
+        "id": 5389745953,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/2"
+      },
+      "plane": {
+        "id": "6e18bdec-29b7-4911-8f92-5f6ebdb9f07c",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/6e18bdec-29b7-4911-8f92-5f6ebdb9f07c"
+      }
+    },
+    "M10": {
+      "github": {
+        "number": 3,
+        "id": 5389746315,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/3"
+      },
+      "plane": {
+        "id": "2d1f6499-cdaa-4873-8187-4a031480216c",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/2d1f6499-cdaa-4873-8187-4a031480216c"
+      }
+    },
+    "M02": {
+      "plane": {
+        "id": "6a93aef2-68ba-45ed-b33c-e4f8998405ae",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/6a93aef2-68ba-45ed-b33c-e4f8998405ae"
+      },
+      "github": {
+        "number": 16,
+        "id": 5395943900,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/16"
+      }
+    },
+    "M03": {
+      "plane": {
+        "id": "2558aa85-36a7-4ab3-8911-900b74f2cf01",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/2558aa85-36a7-4ab3-8911-900b74f2cf01"
+      },
+      "github": {
+        "number": 17,
+        "id": 5395944425,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/17"
+      }
+    },
+    "M04": {
+      "plane": {
+        "id": "53b74c5b-191b-4e77-91bb-3625f94a1177",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/53b74c5b-191b-4e77-91bb-3625f94a1177"
+      },
+      "github": {
+        "number": 18,
+        "id": 5395944630,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/18"
+      }
+    },
+    "M05": {
+      "plane": {
+        "id": "8ff7af1c-4edb-4b4f-82d7-4d270b7093f6",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/8ff7af1c-4edb-4b4f-82d7-4d270b7093f6"
+      },
+      "github": {
+        "number": 19,
+        "id": 5395944849,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/19"
+      }
+    },
+    "M06": {
+      "plane": {
+        "id": "8347c362-0a1a-4664-8700-6d93fc0df4ff",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/8347c362-0a1a-4664-8700-6d93fc0df4ff"
+      },
+      "github": {
+        "number": 20,
+        "id": 5395945242,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/20"
+      }
+    },
+    "M07": {
+      "plane": {
+        "id": "28fd576e-f386-427b-970e-c7346f43dd73",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/28fd576e-f386-427b-970e-c7346f43dd73"
+      },
+      "github": {
+        "number": 21,
+        "id": 5395947173,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/21"
+      }
+    },
+    "M08": {
+      "plane": {
+        "id": "5b77e567-4874-49ce-915e-776f15f99856",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/5b77e567-4874-49ce-915e-776f15f99856"
+      },
+      "github": {
+        "number": 22,
+        "id": 5395947684,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/22"
+      }
+    },
+    "M11": {
+      "plane": {
+        "id": "7cb1da20-9e92-4739-a667-4bd4f07e74c1",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/modules/7cb1da20-9e92-4739-a667-4bd4f07e74c1"
+      },
+      "github": {
+        "number": 23,
+        "id": 5395948443,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/23"
+      }
+    }
+  },
+  "cycles": {
+    "C01": {
+      "github": {
+        "number": 1,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/1"
+      },
+      "plane": {
+        "id": "568ecb7c-421b-492a-9106-7cdd6f873a60",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/568ecb7c-421b-492a-9106-7cdd6f873a60"
+      }
+    },
+    "C03": {
+      "github": {
+        "number": 2,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/2"
+      },
+      "plane": {
+        "id": "e4ccce88-ac5e-43c2-9b03-62caaf74d6a1",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/e4ccce88-ac5e-43c2-9b03-62caaf74d6a1"
+      }
+    },
+    "C10": {
+      "github": {
+        "number": 3,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/3"
+      },
+      "plane": {
+        "id": "2de93db2-79c4-4b00-93e5-e5b7234501b9",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/2de93db2-79c4-4b00-93e5-e5b7234501b9"
+      }
+    },
+    "C02": {
+      "plane": {
+        "id": "217498e3-110f-40d0-a6e6-5672711edbb7",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/217498e3-110f-40d0-a6e6-5672711edbb7"
+      },
+      "github": {
+        "number": 4,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/4"
+      }
+    },
+    "C04": {
+      "plane": {
+        "id": "bd80e8cb-04cd-474f-ba72-ba4f8b5a3dfa",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/bd80e8cb-04cd-474f-ba72-ba4f8b5a3dfa"
+      },
+      "github": {
+        "number": 5,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/5"
+      }
+    },
+    "C05": {
+      "plane": {
+        "id": "06469110-90b9-4991-b790-c824139e741a",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/06469110-90b9-4991-b790-c824139e741a"
+      },
+      "github": {
+        "number": 6,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/6"
+      }
+    },
+    "C06": {
+      "plane": {
+        "id": "e35e76df-fc05-4ee9-b0c1-6b40cf357d59",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/e35e76df-fc05-4ee9-b0c1-6b40cf357d59"
+      },
+      "github": {
+        "number": 7,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/7"
+      }
+    },
+    "C07": {
+      "plane": {
+        "id": "d69c8015-daa3-441f-a0f2-b38dda7d0ae6",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/d69c8015-daa3-441f-a0f2-b38dda7d0ae6"
+      },
+      "github": {
+        "number": 8,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/8"
+      }
+    },
+    "C08": {
+      "plane": {
+        "id": "97b50364-19b8-40ea-ba71-1fa5f385972a",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/97b50364-19b8-40ea-ba71-1fa5f385972a"
+      },
+      "github": {
+        "number": 9,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/9"
+      }
+    },
+    "C09": {
+      "plane": {
+        "id": "9fafe7d9-cd99-496d-adfd-60b4dc5575f7",
+        "url": "https://work.opengis.vn/stac/projects/cb01f067-7279-44a7-8058-ea1a1be63483/cycles/9fafe7d9-cd99-496d-adfd-60b4dc5575f7"
+      },
+      "github": {
+        "number": 10,
+        "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/milestone/10"
+      }
+    }
+  },
+  "workItems": {
+    "CORE-001": {
+      "status": "done",
+      "progressNotes": [
+        "Baseline migration đạt; restore fixture đối soát 10 bảng. Chưa đối soát bản sao dữ liệu production.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-1",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-1/"
+        },
+        "github": {
+          "number": 7,
+          "id": 5389747313,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/7"
+        }
+      }
+    },
+    "CORE-002": {
+      "status": "done",
+      "progressNotes": [
+        "Đã thay xóa bằng lưu trữ; kiểm thử bảo toàn hợp đồng/thanh toán và rollback đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-2",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-2/"
+        },
+        "github": {
+          "number": 9,
+          "id": 5389747684,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/9"
+        }
+      }
+    },
+    "CORE-003": {
+      "status": "done",
+      "progressNotes": [
+        "Validation tiền Decimal/ngày/JSON/phân trang; kiểm thử biên và API đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-3",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-3/"
+        },
+        "github": {
+          "number": 10,
+          "id": 5389747972,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/10"
+        }
+      }
+    },
+    "QA-001": {
+      "status": "done",
+      "progressNotes": [
+        "Typecheck, lint, build, 5 unit, 7 integration và 5 backlog test local đạt; GitHub Actions verify đạt trên PR #15.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-4",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-4/"
+        },
+        "github": {
+          "number": 11,
+          "id": 5389748124,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/11"
+        }
+      }
+    },
+    "LINK-001": {
+      "status": "done",
+      "progressNotes": [
+        "Kiểm tra 51 item/11 module/10 cycle/80 dependency; mapping tái xuất được bảo toàn.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-5",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-5/"
+        },
+        "github": {
+          "number": 13,
+          "id": 5389748671,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/13"
+        }
+      }
+    },
+    "LINK-002": {
+      "status": "done",
+      "progressNotes": [
+        "Mapping và đồng bộ GitHub đang triển khai; Plane chưa tự động hóa.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 14,
+          "id": 5389748856,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/14"
+        },
+        "plane": {
+          "id": "QUNLDN-40",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-40/"
+        }
+      }
+    },
+    "OPS-001": {
+      "status": "planned",
+      "progressNotes": [
+        "Giữ C10: chờ MVP-001 và REPORT-001; chưa triển khai production.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 12,
+          "id": 5389748437,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/12"
+        },
+        "plane": {
+          "id": "QUNLDN-39",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-39/"
+        }
+      }
+    },
+    "SEC-001": {
+      "status": "done",
+      "progressNotes": [
+        "JWT fail closed, HS256, payload/expiry và tài khoản hoạt động; kiểm thử đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 4,
+          "id": 5389746678,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/4"
+        },
+        "plane": {
+          "id": "QUNLDN-6",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-6/"
+        }
+      }
+    },
+    "SEC-002": {
+      "status": "done",
+      "progressNotes": [
+        "Giới hạn dữ liệu theo vai trò và người dùng; kiểm thử truy cập chéo đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 5,
+          "id": 5389746897,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/5"
+        },
+        "plane": {
+          "id": "QUNLDN-7",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-7/"
+        }
+      }
+    },
+    "SEC-003": {
+      "status": "done",
+      "progressNotes": [
+        "Làm sạch HTML ở đọc/ghi; kiểm thử XSS đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 6,
+          "id": 5389747095,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/6"
+        },
+        "plane": {
+          "id": "QUNLDN-8",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-8/"
+        }
+      }
+    },
+    "AUD-001": {
+      "status": "done",
+      "progressNotes": [
+        "Transaction audit cho create/update/archive; thử lỗi audit rollback đạt.",
+        "Chi tiết: docs/module-01.md. Chưa triển khai production."
+      ],
+      "externalMappings": {
+        "github": {
+          "number": 8,
+          "id": 5389747493,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/8"
+        },
+        "plane": {
+          "id": "QUNLDN-9",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-9/"
+        }
+      }
+    },
+    "PEOPLE-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-10",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-10/"
+        },
+        "github": {
+          "number": 24,
+          "id": 5395949865,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/24"
+        }
+      },
+      "status": "done",
+      "progressNotes": [
+        "Hoàn thành Person tách User: userId tùy chọn/duy nhất, migration backfill tài khoản hiện có, CRUD Python, giao diện /people và cộng tác viên không cần đăng nhập.",
+        "Đã kiểm thử tạo hồ sơ không tài khoản, liên kết tài khoản, chặn liên kết trùng 409, ngừng hoạt động, audit và RESEARCHER bị chặn 403. Chi tiết: docs/module-02.md.",
+        "Đã xử lý schema baseline chưa được ghi nhận, URL test tiếng Việt và mapping enum/timestamp của SQLAlchemy; không reset dữ liệu demo."
+      ]
+    },
+    "PEOPLE-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-11",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-11/"
+        },
+        "github": {
+          "number": 25,
+          "id": 5395950082,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/25"
+        }
+      }
+    },
+    "PEOPLE-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-12",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-12/"
+        },
+        "github": {
+          "number": 26,
+          "id": 5395950227,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/26"
+        }
+      }
+    },
+    "PEOPLE-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-13",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-13/"
+        },
+        "github": {
+          "number": 27,
+          "id": 5395950466,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/27"
+        }
+      }
+    },
+    "WORK-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-14",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-14/"
+        },
+        "github": {
+          "number": 28,
+          "id": 5395950608,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/28"
+        }
+      }
+    },
+    "WORK-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-15",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-15/"
+        },
+        "github": {
+          "number": 29,
+          "id": 5395950878,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/29"
+        }
+      }
+    },
+    "WORK-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-16",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-16/"
+        },
+        "github": {
+          "number": 30,
+          "id": 5395951032,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/30"
+        }
+      }
+    },
+    "RULE-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-17",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-17/"
+        },
+        "github": {
+          "number": 31,
+          "id": 5395951207,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/31"
+        }
+      }
+    },
+    "RULE-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-18",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-18/"
+        },
+        "github": {
+          "number": 32,
+          "id": 5395951356,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/32"
+        }
+      }
+    },
+    "RULE-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-19",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-19/"
+        },
+        "github": {
+          "number": 33,
+          "id": 5395951553,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/33"
+        }
+      }
+    },
+    "RULE-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-20",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-20/"
+        },
+        "github": {
+          "number": 34,
+          "id": 5395951686,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/34"
+        }
+      }
+    },
+    "ALLOC-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-21",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-21/"
+        },
+        "github": {
+          "number": 35,
+          "id": 5395951879,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/35"
+        }
+      }
+    },
+    "ALLOC-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-22",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-22/"
+        },
+        "github": {
+          "number": 36,
+          "id": 5395952176,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/36"
+        }
+      }
+    },
+    "ALLOC-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-23",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-23/"
+        },
+        "github": {
+          "number": 37,
+          "id": 5395952285,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/37"
+        }
+      }
+    },
+    "PAY-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-24",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-24/"
+        },
+        "github": {
+          "number": 38,
+          "id": 5395952491,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/38"
+        }
+      }
+    },
+    "PAY-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-25",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-25/"
+        },
+        "github": {
+          "number": 39,
+          "id": 5395952647,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/39"
+        }
+      }
+    },
+    "VIEW-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-26",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-26/"
+        },
+        "github": {
+          "number": 40,
+          "id": 5395952957,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/40"
+        }
+      }
+    },
+    "VIEW-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-27",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-27/"
+        },
+        "github": {
+          "number": 41,
+          "id": 5395953095,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/41"
+        }
+      }
+    },
+    "MVP-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-28",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-28/"
+        },
+        "github": {
+          "number": 42,
+          "id": 5395953312,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/42"
+        }
+      }
+    },
+    "TAX-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-29",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-29/"
+        },
+        "github": {
+          "number": 43,
+          "id": 5395953472,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/43"
+        }
+      }
+    },
+    "TAX-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-30",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-30/"
+        },
+        "github": {
+          "number": 44,
+          "id": 5395953609,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/44"
+        }
+      }
+    },
+    "TAX-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-31",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-31/"
+        },
+        "github": {
+          "number": 45,
+          "id": 5395953768,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/45"
+        }
+      }
+    },
+    "TAX-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-32",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-32/"
+        },
+        "github": {
+          "number": 46,
+          "id": 5395953912,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/46"
+        }
+      }
+    },
+    "SCEN-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-33",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-33/"
+        },
+        "github": {
+          "number": 47,
+          "id": 5395954143,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/47"
+        }
+      }
+    },
+    "SCEN-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-34",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-34/"
+        },
+        "github": {
+          "number": 48,
+          "id": 5395954406,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/48"
+        }
+      }
+    },
+    "VIEW-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-35",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-35/"
+        },
+        "github": {
+          "number": 49,
+          "id": 5395954628,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/49"
+        }
+      }
+    },
+    "SEC-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-36",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-36/"
+        },
+        "github": {
+          "number": 50,
+          "id": 5395954777,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/50"
+        }
+      }
+    },
+    "REPORT-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-37",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-37/"
+        },
+        "github": {
+          "number": 51,
+          "id": 5395954982,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/51"
+        }
+      }
+    },
+    "REPORT-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-38",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-38/"
+        },
+        "github": {
+          "number": 52,
+          "id": 5395955164,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/52"
+        }
+      }
+    },
+    "SEC-005": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-41",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-41/"
+        },
+        "github": {
+          "number": 53,
+          "id": 5395955904,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/53"
+        }
+      }
+    },
+    "CONTRACT-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-42",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-42/"
+        },
+        "github": {
+          "number": 54,
+          "id": 5395956160,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/54"
+        }
+      }
+    },
+    "WORK-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-43",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-43/"
+        },
+        "github": {
+          "number": 55,
+          "id": 5395956306,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/55"
+        }
+      }
+    },
+    "PAY-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-44",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-44/"
+        },
+        "github": {
+          "number": 56,
+          "id": 5395956469,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/56"
+        }
+      }
+    },
+    "PAY-004": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-45",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-45/"
+        },
+        "github": {
+          "number": 57,
+          "id": 5395956618,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/57"
+        }
+      }
+    },
+    "DOC-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-46",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-46/"
+        },
+        "github": {
+          "number": 58,
+          "id": 5395956761,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/58"
+        }
+      }
+    },
+    "DOC-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-47",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-47/"
+        },
+        "github": {
+          "number": 59,
+          "id": 5395956905,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/59"
+        }
+      }
+    },
+    "DOC-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-48",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-48/"
+        },
+        "github": {
+          "number": 60,
+          "id": 5395957058,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/60"
+        }
+      }
+    },
+    "NOTICE-001": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-49",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-49/"
+        },
+        "github": {
+          "number": 61,
+          "id": 5395957303,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/61"
+        }
+      }
+    },
+    "NOTICE-002": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-50",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-50/"
+        },
+        "github": {
+          "number": 62,
+          "id": 5395957450,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/62"
+        }
+      }
+    },
+    "NOTICE-003": {
+      "externalMappings": {
+        "plane": {
+          "id": "QUNLDN-51",
+          "url": "https://work.opengis.vn/stac/browse/QUNLDN-51/"
+        },
+        "github": {
+          "number": 63,
+          "id": 5395957614,
+          "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/63"
+        }
+      }
+    }
+  },
+  "planeImport": {
+    "projectId": "cb01f067-7279-44a7-8058-ea1a1be63483",
+    "workspace": "stac",
+    "completedAt": "2026-09-09",
+    "moduleCount": 11,
+    "cycleCount": 10,
+    "workItemCount": 51,
+    "relationCount": 80,
+    "notes": "Mỗi Work Item được gắn Module và Cycle; các quan hệ phụ thuộc/liên quan được ghi trong mô tả Work Item theo docs/backlog.json."
+  }
+}

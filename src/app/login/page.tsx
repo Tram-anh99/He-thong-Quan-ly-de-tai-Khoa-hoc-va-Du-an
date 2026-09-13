@@ -7,14 +7,12 @@ import {
      LockOutlined,
      ExperimentOutlined,
 } from "@ant-design/icons";
-import { useRouter } from "next/navigation";
 import axios from "axios";
 
 const { Title, Text } = Typography;
 
 export default function LoginPage() {
      const [loading, setLoading] = useState(false);
-     const router = useRouter();
 
      const onFinish = async (values: { email: string; password: string }) => {
           setLoading(true);
@@ -22,7 +20,9 @@ export default function LoginPage() {
                const res = await axios.post("/api/auth/login", values);
                if (res.data.success) {
                     message.success("Đăng nhập thành công!");
-                    router.push("/");
+                    // Complete the browser navigation only after its httpOnly
+                    // session cookie has been committed.
+                    window.location.assign("/");
                } else {
                     message.error(res.data.error || "Đăng nhập thất bại");
                }

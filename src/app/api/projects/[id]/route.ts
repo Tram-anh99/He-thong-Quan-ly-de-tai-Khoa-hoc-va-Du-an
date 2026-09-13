@@ -1,206 +1,76 @@
 import { NextRequest } from "next/server";
+import { Prisma } from "@prisma/client";
 import prisma from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth";
-import { successResponse, errorResponse } from "@/lib/api-helpers";
+import { successResponse, errorResponse, failureResponse } from "@/lib/api-helpers";
 import { compactProjectForAudit, createAuditLog } from "@/lib/audit";
+import { canArchiveProject, canEditProject, projectListView, projectScope } from "@/lib/access";
+import { jsonObject, projectInput } from "@/lib/validation";
+import { cleanHtml } from "@/lib/html";
 
 export const dynamic = "force-dynamic";
-
 type Params = { params: { id: string } };
 
-// GET /api/projects/[id] - Get project details
 export async function GET(request: NextRequest, { params }: Params) {
      try {
           const user = await getCurrentUser(request);
           if (!user) return errorResponse("Unauthorized", 401);
-
-          const project = await prisma.project.findUnique({
-               where: { id: params.id },
+          const member = user.role === "RESEARCHER";
+          const project = await prisma.project.findFirst({
+               where: { AND: [{ id: params.id }, projectScope(user)] },
                include: {
-                    owner: {
-                         select: {
-                              id: true,
-                              fullName: true,
-                              position: true,
-                              department: true,
-                              email: true,
-                         },
-                    },
-                    members: {
-                         include: {
-                              user: {
-                                   select: {
-                                        id: true,
-                                        fullName: true,
-                                        position: true,
-                                        department: true,
-                                        email: true,
-                                   },
-                              },
-                         },
-                    },
-                    budgetItems: {
-                         include: {
-                              assignedTo: {
-                                   select: { id: true, fullName: true },
-                              },
-                         },
-                         orderBy: { sortOrder: "asc" },
-                    },
-                    documents: { orderBy: { createdAt: "desc" } },
-                    contracts: {
-                         include: {
-                              user: { select: { id: true, fullName: true } },
-                         },
-                         orderBy: { createdAt: "desc" },
-                    },
-                    products: { orderBy: { createdAt: "desc" } },
-                    paymentRecords: {
-                         include: {
-                              budgetItem: { select: { id: true, title: true } },
-                              contract: {
-                                   select: {
-                                        id: true,
-                                        title: true,
-                                        contractNo: true,
-                                   },
-                              },
-                         },
-                         orderBy: { createdAt: "desc" },
-                    },
+                    owner: { select: { id: true, fullName: true, position: true, department: true } },
+                    members: { where: member ? { userId: user.id } : {}, include: {
+                         user: { select: { id: true, fullName: true, position: true, department: true } } } },
+                    budgetItems: { where: member ? { assignedToId: user.id } : {},
+                         include: { assignedTo: { select: { id: true, fullName: true } } }, orderBy: { sortOrder: "asc" } },
+                    contracts: { where: member ? { userId: user.id } : {},
+                         include: { user: { select: { id: true, fullName: true } } }, orderBy: { createdAt: "desc" } },
+                    // Legacy records do not identify a payee reliably. Withhold them from member responses until migrated.
+                    paymentRecords: !member, documents: !member, products: !member,
                },
           });
-
           if (!project) return errorResponse("Không tìm thấy dự án", 404);
-
-          return successResponse(project);
-     } catch (error) {
-          console.error("GET /api/projects/[id] error:", error);
-          return errorResponse("Không thể tải thông tin dự án", 500);
-     }
+          return successResponse(projectListView({ ...project, fullText: cleanHtml(project.fullText) }, user));
+     } catch (error) { return failureResponse(error, "Không thể tải thông tin dự án"); }
 }
 
-// PUT /api/projects/[id] - Update project
 export async function PUT(request: NextRequest, { params }: Params) {
      try {
           const user = await getCurrentUser(request);
           if (!user) return errorResponse("Unauthorized", 401);
-
-          const existing = await prisma.project.findUnique({
-               where: { id: params.id },
-          });
-          if (!existing) return errorResponse("Không tìm thấy dự án", 404);
-
-          // Only owner, ADMIN, MANAGER can edit
-          const canEdit =
-               ["ADMIN", "MANAGER"].includes(user.role) ||
-               existing.ownerId === user.id;
-          if (!canEdit)
-               return errorResponse("Bạn không có quyền sửa dự án này", 403);
-
-          const body = await request.json();
-          const {
-               code,
-               title,
-               summary,
-               fullText,
-               totalBudget,
-               fundingSource,
-               startDate,
-               endDate,
-               year,
-               status,
-          } = body;
-
-          // Check code uniqueness if changed
-          if (code && code !== existing.code) {
-               const codeExists = await prisma.project.findUnique({
-                    where: { code },
-               });
-               if (codeExists)
-                    return errorResponse(`Mã đề tài "${code}" đã tồn tại`);
-          }
-
-          const project = await prisma.project.update({
-               where: { id: params.id },
-               data: {
-                    ...(code !== undefined && { code: code || null }),
-                    ...(title !== undefined && { title: title.trim() }),
-                    ...(summary !== undefined && { summary }),
-                    ...(fullText !== undefined && { fullText }),
-                    ...(totalBudget !== undefined && { totalBudget }),
-                    ...(fundingSource !== undefined && { fundingSource }),
-                    ...(startDate !== undefined && {
-                         startDate: startDate ? new Date(startDate) : null,
-                    }),
-                    ...(endDate !== undefined && {
-                         endDate: endDate ? new Date(endDate) : null,
-                    }),
-                    ...(year !== undefined && { year: parseInt(year) }),
-                    ...(status !== undefined && { status }),
-               },
-               include: {
-                    owner: {
-                         select: {
-                              id: true,
-                              fullName: true,
-                              position: true,
-                              department: true,
-                         },
-                    },
-               },
-          });
-
-          await createAuditLog({
-               request,
-               user,
-               entity: "Project",
-               entityId: project.id,
-               action: "UPDATE",
-               payload: {
-                    before: compactProjectForAudit(existing),
-                    after: compactProjectForAudit(project),
-               },
-          });
-
-          return successResponse(project);
-     } catch (error) {
-          console.error("PUT /api/projects/[id] error:", error);
-          return errorResponse("Không thể cập nhật dự án", 500);
-     }
+          const body = await jsonObject(request);
+          return await prisma.$transaction(async tx => {
+               const existing = await tx.project.findFirst({ where: { AND: [{ id: params.id }, projectScope(user)] } });
+               if (!existing) return errorResponse("Không tìm thấy dự án", 404);
+               if (!canEditProject(user, existing.ownerId)) return errorResponse("Bạn không có quyền sửa dự án này", 403);
+               const input = projectInput(body, existing);
+               const project = await tx.project.update({ where: { id: params.id }, data: {
+                    ...input, ...(input.fullText !== undefined && { fullText: cleanHtml(input.fullText) }),
+               }, include: { owner: { select: { id: true, fullName: true, position: true, department: true } } } });
+               await createAuditLog({ request, user, entity: "Project", entityId: project.id, action: "UPDATE",
+                    payload: { before: compactProjectForAudit(existing), after: compactProjectForAudit(project) } }, tx);
+               return successResponse(project);
+          }, { isolationLevel: Prisma.TransactionIsolationLevel.Serializable });
+     } catch (error) { return failureResponse(error, "Không thể cập nhật dự án"); }
 }
 
-// DELETE /api/projects/[id] - Delete project
+// Legacy DELETE is now a reversible archive; no child financial records are removed.
 export async function DELETE(request: NextRequest, { params }: Params) {
      try {
           const user = await getCurrentUser(request);
           if (!user) return errorResponse("Unauthorized", 401);
-
-          if (!["ADMIN", "MANAGER"].includes(user.role)) {
-               return errorResponse("Bạn không có quyền xóa dự án", 403);
-          }
-
-          const existing = await prisma.project.findUnique({
-               where: { id: params.id },
-          });
-          if (!existing) return errorResponse("Không tìm thấy dự án", 404);
-
-          await prisma.project.delete({ where: { id: params.id } });
-
-          await createAuditLog({
-               request,
-               user,
-               entity: "Project",
-               entityId: params.id,
-               action: "DELETE",
-               payload: {
-                    before: compactProjectForAudit(existing),
-               },
-          });
-
-          return successResponse({ message: "Đã xóa dự án thành công" });
-     } catch (error) {
-          console.error("DELETE /api/projects/[id] error:", error);
-          return errorResponse("Không thể xóa dự án", 500);
-     }
+          if (!canArchiveProject(user)) return errorResponse("Bạn không có quyền lưu trữ dự án", 403);
+          return await prisma.$transaction(async tx => {
+               const existing = await tx.project.findUnique({ where: { id: params.id } });
+               if (!existing) return errorResponse("Không tìm thấy dự án", 404);
+               if (existing.status !== "ARCHIVED") {
+                    const archived = await tx.project.update({ where: { id: params.id }, data: { status: "ARCHIVED" } });
+                    await createAuditLog({ request, user, entity: "Project", entityId: params.id, action: "UPDATE",
+                         payload: { reason: "Lưu trữ đề tài thay cho xóa dữ liệu", before: compactProjectForAudit(existing),
+                              after: compactProjectForAudit(archived) } }, tx);
+               }
+               return successResponse({ message: "Đã lưu trữ dự án, giữ nguyên hồ sơ và thanh toán" });
+          }, { isolationLevel: Prisma.TransactionIsolationLevel.Serializable });
+     } catch (error) { return failureResponse(error, "Không thể lưu trữ dự án"); }
 }

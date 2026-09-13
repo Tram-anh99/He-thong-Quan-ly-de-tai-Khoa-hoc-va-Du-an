@@ -86,11 +86,15 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                icon: <FileTextOutlined />,
                label: "Biểu mẫu",
           },
-          {
-               key: "/users",
-               icon: <TeamOutlined />,
-               label: "Nhân sự",
-          },
+          ...(user?.role === "ADMIN" || user?.role === "MANAGER"
+               ? [
+                      {
+                           key: "/people",
+                           icon: <TeamOutlined />,
+                           label: "Nhân sự",
+                      },
+                 ]
+               : []),
           {
                key: "/reports",
                icon: <DollarOutlined />,

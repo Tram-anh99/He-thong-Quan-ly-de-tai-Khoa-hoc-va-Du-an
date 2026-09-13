@@ -1,0 +1,52 @@
+{
+  "source": "research_m01_test",
+  "restoredDatabase": "research_m01_test_restore_1788937765",
+  "matched": true,
+  "dataKind": "synthetic-test-fixtures-not-production",
+  "tables": {
+    "users": {
+      "count": 20,
+      "digest": "22e2ea6f861e86cae861a3e39934d7ae"
+    },
+    "projects": {
+      "count": 8,
+      "digest": "2e837e0a2bca44c762848efaf9c4174a",
+      "sum": "3999999999999999999.96"
+    },
+    "project_documents": {
+      "count": 3,
+      "digest": "e2dd81cfb12a3642a7e50bf1fb18d8f9"
+    },
+    "project_members": {
+      "count": 12,
+      "digest": "d92b5e1018cbe919a786624b6bad5548"
+    },
+    "budget_items": {
+      "count": 3,
+      "digest": "134aa59d063e2e2115bddb3a364c5c8f",
+      "sum": "150.03"
+    },
+    "contracts": {
+      "count": 4,
+      "digest": "f738cab1427db236b59f902b5ded4a29",
+      "sum": "493.80"
+    },
+    "products": {
+      "count": 3,
+      "digest": "8311be11132f2cd9d285c9931a33f52a"
+    },
+    "payment_records": {
+      "count": 4,
+      "digest": "e699508f6084ab58a3f9c5cd7f290ee0",
+      "sum": "49.36"
+    },
+    "document_templates": {
+      "count": 3,
+      "digest": "2cbe6c5520d7cbe731a3beb25f30ba8e"
+    },
+    "audit_logs": {
+      "count": 12,
+      "digest": "12c1e7c0b0720fe8206fcd000e399a58"
+    }
+  }
+}
