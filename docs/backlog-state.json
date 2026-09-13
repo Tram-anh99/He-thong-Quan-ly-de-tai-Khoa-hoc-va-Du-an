@@ -448,10 +448,11 @@
           "url": "https://github.com/Tram-anh99/He-thong-Quan-ly-de-tai-Khoa-hoc-va-Du-an/issues/24"
         }
       },
-      "status": "in_progress",
+      "status": "done",
       "progressNotes": [
-        "Đã chuyển sang Đang thực hiện trên Plane và GitHub sau khi Module 1 cùng luồng đăng nhập demo được xác nhận.",
-        "Đầu vào: CORE-001 và SEC-002 đã hoàn tất. Bước tiếp theo: thiết kế Person tách User, CRUD hồ sơ, liên kết tài khoản và cho phép cộng tác viên không cần đăng nhập."
+        "Hoàn thành Person tách User: userId tùy chọn/duy nhất, migration backfill tài khoản hiện có, CRUD Python, giao diện /people và cộng tác viên không cần đăng nhập.",
+        "Đã kiểm thử tạo hồ sơ không tài khoản, liên kết tài khoản, chặn liên kết trùng 409, ngừng hoạt động, audit và RESEARCHER bị chặn 403. Chi tiết: docs/module-02.md.",
+        "Đã xử lý schema baseline chưa được ghi nhận, URL test tiếng Việt và mapping enum/timestamp của SQLAlchemy; không reset dữ liệu demo."
       ]
     },
     "PEOPLE-002": {

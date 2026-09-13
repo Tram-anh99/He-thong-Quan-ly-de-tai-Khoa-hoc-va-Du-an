@@ -65,6 +65,7 @@ model User {
   memberships     ProjectMember[]
   contracts       Contract[]
   budgetAssignments BudgetItem[]   @relation("AssignedBudgetItems")
+  person          Person?          @relation("PersonAccount")
 
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
@@ -72,6 +73,27 @@ model User {
   @@index([email])
   @@index([role])
   @@map("users")
+}
+
+model Person {
+  id              String   @id @default(uuid())
+  userId          String?  @unique // Tùy chọn để cộng tác viên không cần tài khoản đăng nhập
+  fullName        String
+  email           String?  @unique
+  phoneNumber     String?
+  position        String?
+  department      String?
+  isActive        Boolean  @default(true)
+
+  // A linked account is optional and is never used as the profile identity.
+  user            User?    @relation("PersonAccount", fields: [userId], references: [id], onDelete: SetNull)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([fullName])
+  @@index([isActive])
+  @@map("people")
 }
 
 model Project {

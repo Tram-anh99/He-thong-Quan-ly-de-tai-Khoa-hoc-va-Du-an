@@ -4,6 +4,7 @@ Next.js + TypeScript + Ant Design + Prisma/PostgreSQL.
 
 - [Yêu cầu và lộ trình nâng cấp](docs/research-budget-requirements.md)
 - [Module 1: thay đổi, kiểm thử và phần còn lại](docs/module-01.md)
+- [Module 2: hồ sơ nhân sự và kiểm thử](docs/module-02.md)
 - [Backlog có quan hệ module/cycle/dependency](docs/backlog.json)
 - [Tiến độ và ánh xạ Plane/GitHub](docs/backlog-state.json)
 

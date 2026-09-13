@@ -70,6 +70,50 @@ async function main() {
      });
      console.log("  ✅ Accountant user:", accountant.email);
 
+     // Every login account receives a linked business profile. The profile may
+     // later be unlinked without deleting either historical record.
+     for (const user of [admin, pi, researcher, accountant]) {
+          await prisma.person.upsert({
+               where: { userId: user.id },
+               update: {
+                    fullName: user.fullName,
+                    email: user.email,
+                    phoneNumber: user.phoneNumber,
+                    position: user.position,
+                    department: user.department,
+                    isActive: user.isActive,
+               },
+               create: {
+                    userId: user.id,
+                    fullName: user.fullName,
+                    email: user.email,
+                    phoneNumber: user.phoneNumber,
+                    position: user.position,
+                    department: user.department,
+                    isActive: user.isActive,
+               },
+          });
+     }
+     await prisma.person.upsert({
+          where: { email: "congtacvien.demo@khoahoc.vn" },
+          update: {
+               fullName: "Cộng tác viên demo",
+               phoneNumber: "0900000000",
+               position: "Cộng tác viên",
+               department: "Bên ngoài",
+               userId: null,
+               isActive: true,
+          },
+          create: {
+               fullName: "Cộng tác viên demo",
+               email: "congtacvien.demo@khoahoc.vn",
+               phoneNumber: "0900000000",
+               position: "Cộng tác viên",
+               department: "Bên ngoài",
+          },
+     });
+     console.log("  ✅ People profiles and an unlinked collaborator created");
+
      // Create sample project
      const project = await prisma.project.upsert({
           where: { code: "DT-2025-001" },

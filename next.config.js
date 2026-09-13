@@ -10,6 +10,7 @@ const nextConfig = {
                beforeFiles: [
                     { source: "/api/dashboard", destination: `${backend}/api/dashboard` },
                     { source: "/api/projects/:path*", destination: `${backend}/api/projects/:path*` },
+                    { source: "/api/people/:path*", destination: `${backend}/api/people/:path*` },
                ],
           };
      },
